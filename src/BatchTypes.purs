@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -38,7 +37,7 @@ instance encodeArrayJobStatusSummary :: Encode ArrayJobStatusSummary where encod
 
 -- | <p>An object representing an AWS Batch array job.</p>
 newtype ArrayProperties = ArrayProperties 
-  { "size" :: NullOrUndefined (Int)
+  { "size" :: Maybe (Int)
   }
 derive instance newtypeArrayProperties :: Newtype ArrayProperties _
 derive instance repGenericArrayProperties :: Generic ArrayProperties _
@@ -48,20 +47,20 @@ instance encodeArrayProperties :: Encode ArrayProperties where encode = genericE
 
 -- | Constructs ArrayProperties from required parameters
 newArrayProperties :: ArrayProperties
-newArrayProperties  = ArrayProperties { "size": (NullOrUndefined Nothing) }
+newArrayProperties  = ArrayProperties { "size": Nothing }
 
 -- | Constructs ArrayProperties's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArrayProperties' :: ( { "size" :: NullOrUndefined (Int) } -> {"size" :: NullOrUndefined (Int) } ) -> ArrayProperties
-newArrayProperties'  customize = (ArrayProperties <<< customize) { "size": (NullOrUndefined Nothing) }
+newArrayProperties' :: ( { "size" :: Maybe (Int) } -> {"size" :: Maybe (Int) } ) -> ArrayProperties
+newArrayProperties'  customize = (ArrayProperties <<< customize) { "size": Nothing }
 
 
 
 -- | <p>An object representing the array properties of a job.</p>
 newtype ArrayPropertiesDetail = ArrayPropertiesDetail 
-  { "statusSummary" :: NullOrUndefined (ArrayJobStatusSummary)
-  , "size" :: NullOrUndefined (Int)
-  , "index" :: NullOrUndefined (Int)
+  { "statusSummary" :: Maybe (ArrayJobStatusSummary)
+  , "size" :: Maybe (Int)
+  , "index" :: Maybe (Int)
   }
 derive instance newtypeArrayPropertiesDetail :: Newtype ArrayPropertiesDetail _
 derive instance repGenericArrayPropertiesDetail :: Generic ArrayPropertiesDetail _
@@ -71,19 +70,19 @@ instance encodeArrayPropertiesDetail :: Encode ArrayPropertiesDetail where encod
 
 -- | Constructs ArrayPropertiesDetail from required parameters
 newArrayPropertiesDetail :: ArrayPropertiesDetail
-newArrayPropertiesDetail  = ArrayPropertiesDetail { "index": (NullOrUndefined Nothing), "size": (NullOrUndefined Nothing), "statusSummary": (NullOrUndefined Nothing) }
+newArrayPropertiesDetail  = ArrayPropertiesDetail { "index": Nothing, "size": Nothing, "statusSummary": Nothing }
 
 -- | Constructs ArrayPropertiesDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArrayPropertiesDetail' :: ( { "statusSummary" :: NullOrUndefined (ArrayJobStatusSummary) , "size" :: NullOrUndefined (Int) , "index" :: NullOrUndefined (Int) } -> {"statusSummary" :: NullOrUndefined (ArrayJobStatusSummary) , "size" :: NullOrUndefined (Int) , "index" :: NullOrUndefined (Int) } ) -> ArrayPropertiesDetail
-newArrayPropertiesDetail'  customize = (ArrayPropertiesDetail <<< customize) { "index": (NullOrUndefined Nothing), "size": (NullOrUndefined Nothing), "statusSummary": (NullOrUndefined Nothing) }
+newArrayPropertiesDetail' :: ( { "statusSummary" :: Maybe (ArrayJobStatusSummary) , "size" :: Maybe (Int) , "index" :: Maybe (Int) } -> {"statusSummary" :: Maybe (ArrayJobStatusSummary) , "size" :: Maybe (Int) , "index" :: Maybe (Int) } ) -> ArrayPropertiesDetail
+newArrayPropertiesDetail'  customize = (ArrayPropertiesDetail <<< customize) { "index": Nothing, "size": Nothing, "statusSummary": Nothing }
 
 
 
 -- | <p>An object representing the array properties of a job.</p>
 newtype ArrayPropertiesSummary = ArrayPropertiesSummary 
-  { "size" :: NullOrUndefined (Int)
-  , "index" :: NullOrUndefined (Int)
+  { "size" :: Maybe (Int)
+  , "index" :: Maybe (Int)
   }
 derive instance newtypeArrayPropertiesSummary :: Newtype ArrayPropertiesSummary _
 derive instance repGenericArrayPropertiesSummary :: Generic ArrayPropertiesSummary _
@@ -93,22 +92,22 @@ instance encodeArrayPropertiesSummary :: Encode ArrayPropertiesSummary where enc
 
 -- | Constructs ArrayPropertiesSummary from required parameters
 newArrayPropertiesSummary :: ArrayPropertiesSummary
-newArrayPropertiesSummary  = ArrayPropertiesSummary { "index": (NullOrUndefined Nothing), "size": (NullOrUndefined Nothing) }
+newArrayPropertiesSummary  = ArrayPropertiesSummary { "index": Nothing, "size": Nothing }
 
 -- | Constructs ArrayPropertiesSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArrayPropertiesSummary' :: ( { "size" :: NullOrUndefined (Int) , "index" :: NullOrUndefined (Int) } -> {"size" :: NullOrUndefined (Int) , "index" :: NullOrUndefined (Int) } ) -> ArrayPropertiesSummary
-newArrayPropertiesSummary'  customize = (ArrayPropertiesSummary <<< customize) { "index": (NullOrUndefined Nothing), "size": (NullOrUndefined Nothing) }
+newArrayPropertiesSummary' :: ( { "size" :: Maybe (Int) , "index" :: Maybe (Int) } -> {"size" :: Maybe (Int) , "index" :: Maybe (Int) } ) -> ArrayPropertiesSummary
+newArrayPropertiesSummary'  customize = (ArrayPropertiesSummary <<< customize) { "index": Nothing, "size": Nothing }
 
 
 
 -- | <p>An object representing the details of a container that is part of a job attempt.</p>
 newtype AttemptContainerDetail = AttemptContainerDetail 
-  { "containerInstanceArn" :: NullOrUndefined (String)
-  , "taskArn" :: NullOrUndefined (String)
-  , "exitCode" :: NullOrUndefined (Int)
-  , "reason" :: NullOrUndefined (String)
-  , "logStreamName" :: NullOrUndefined (String)
+  { "containerInstanceArn" :: Maybe (String)
+  , "taskArn" :: Maybe (String)
+  , "exitCode" :: Maybe (Int)
+  , "reason" :: Maybe (String)
+  , "logStreamName" :: Maybe (String)
   }
 derive instance newtypeAttemptContainerDetail :: Newtype AttemptContainerDetail _
 derive instance repGenericAttemptContainerDetail :: Generic AttemptContainerDetail _
@@ -118,21 +117,21 @@ instance encodeAttemptContainerDetail :: Encode AttemptContainerDetail where enc
 
 -- | Constructs AttemptContainerDetail from required parameters
 newAttemptContainerDetail :: AttemptContainerDetail
-newAttemptContainerDetail  = AttemptContainerDetail { "containerInstanceArn": (NullOrUndefined Nothing), "exitCode": (NullOrUndefined Nothing), "logStreamName": (NullOrUndefined Nothing), "reason": (NullOrUndefined Nothing), "taskArn": (NullOrUndefined Nothing) }
+newAttemptContainerDetail  = AttemptContainerDetail { "containerInstanceArn": Nothing, "exitCode": Nothing, "logStreamName": Nothing, "reason": Nothing, "taskArn": Nothing }
 
 -- | Constructs AttemptContainerDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttemptContainerDetail' :: ( { "containerInstanceArn" :: NullOrUndefined (String) , "taskArn" :: NullOrUndefined (String) , "exitCode" :: NullOrUndefined (Int) , "reason" :: NullOrUndefined (String) , "logStreamName" :: NullOrUndefined (String) } -> {"containerInstanceArn" :: NullOrUndefined (String) , "taskArn" :: NullOrUndefined (String) , "exitCode" :: NullOrUndefined (Int) , "reason" :: NullOrUndefined (String) , "logStreamName" :: NullOrUndefined (String) } ) -> AttemptContainerDetail
-newAttemptContainerDetail'  customize = (AttemptContainerDetail <<< customize) { "containerInstanceArn": (NullOrUndefined Nothing), "exitCode": (NullOrUndefined Nothing), "logStreamName": (NullOrUndefined Nothing), "reason": (NullOrUndefined Nothing), "taskArn": (NullOrUndefined Nothing) }
+newAttemptContainerDetail' :: ( { "containerInstanceArn" :: Maybe (String) , "taskArn" :: Maybe (String) , "exitCode" :: Maybe (Int) , "reason" :: Maybe (String) , "logStreamName" :: Maybe (String) } -> {"containerInstanceArn" :: Maybe (String) , "taskArn" :: Maybe (String) , "exitCode" :: Maybe (Int) , "reason" :: Maybe (String) , "logStreamName" :: Maybe (String) } ) -> AttemptContainerDetail
+newAttemptContainerDetail'  customize = (AttemptContainerDetail <<< customize) { "containerInstanceArn": Nothing, "exitCode": Nothing, "logStreamName": Nothing, "reason": Nothing, "taskArn": Nothing }
 
 
 
 -- | <p>An object representing a job attempt.</p>
 newtype AttemptDetail = AttemptDetail 
-  { "container" :: NullOrUndefined (AttemptContainerDetail)
-  , "startedAt" :: NullOrUndefined (Number)
-  , "stoppedAt" :: NullOrUndefined (Number)
-  , "statusReason" :: NullOrUndefined (String)
+  { "container" :: Maybe (AttemptContainerDetail)
+  , "startedAt" :: Maybe (Number)
+  , "stoppedAt" :: Maybe (Number)
+  , "statusReason" :: Maybe (String)
   }
 derive instance newtypeAttemptDetail :: Newtype AttemptDetail _
 derive instance repGenericAttemptDetail :: Generic AttemptDetail _
@@ -142,12 +141,12 @@ instance encodeAttemptDetail :: Encode AttemptDetail where encode = genericEncod
 
 -- | Constructs AttemptDetail from required parameters
 newAttemptDetail :: AttemptDetail
-newAttemptDetail  = AttemptDetail { "container": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "stoppedAt": (NullOrUndefined Nothing) }
+newAttemptDetail  = AttemptDetail { "container": Nothing, "startedAt": Nothing, "statusReason": Nothing, "stoppedAt": Nothing }
 
 -- | Constructs AttemptDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttemptDetail' :: ( { "container" :: NullOrUndefined (AttemptContainerDetail) , "startedAt" :: NullOrUndefined (Number) , "stoppedAt" :: NullOrUndefined (Number) , "statusReason" :: NullOrUndefined (String) } -> {"container" :: NullOrUndefined (AttemptContainerDetail) , "startedAt" :: NullOrUndefined (Number) , "stoppedAt" :: NullOrUndefined (Number) , "statusReason" :: NullOrUndefined (String) } ) -> AttemptDetail
-newAttemptDetail'  customize = (AttemptDetail <<< customize) { "container": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "stoppedAt": (NullOrUndefined Nothing) }
+newAttemptDetail' :: ( { "container" :: Maybe (AttemptContainerDetail) , "startedAt" :: Maybe (Number) , "stoppedAt" :: Maybe (Number) , "statusReason" :: Maybe (String) } -> {"container" :: Maybe (AttemptContainerDetail) , "startedAt" :: Maybe (Number) , "stoppedAt" :: Maybe (Number) , "statusReason" :: Maybe (String) } ) -> AttemptDetail
+newAttemptDetail'  customize = (AttemptDetail <<< customize) { "container": Nothing, "startedAt": Nothing, "statusReason": Nothing, "stoppedAt": Nothing }
 
 
 
@@ -228,7 +227,7 @@ instance encodeCancelJobResponse :: Encode CancelJobResponse where encode = gene
 
 -- | <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that is not valid. </p>
 newtype ClientException = ClientException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeClientException :: Newtype ClientException _
 derive instance repGenericClientException :: Generic ClientException _
@@ -238,12 +237,12 @@ instance encodeClientException :: Encode ClientException where encode = genericE
 
 -- | Constructs ClientException from required parameters
 newClientException :: ClientException
-newClientException  = ClientException { "message": (NullOrUndefined Nothing) }
+newClientException  = ClientException { "message": Nothing }
 
 -- | Constructs ClientException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClientException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ClientException
-newClientException'  customize = (ClientException <<< customize) { "message": (NullOrUndefined Nothing) }
+newClientException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ClientException
+newClientException'  customize = (ClientException <<< customize) { "message": Nothing }
 
 
 
@@ -252,12 +251,12 @@ newtype ComputeEnvironmentDetail = ComputeEnvironmentDetail
   { "computeEnvironmentName" :: (String)
   , "computeEnvironmentArn" :: (String)
   , "ecsClusterArn" :: (String)
-  , "type" :: NullOrUndefined (CEType)
-  , "state" :: NullOrUndefined (CEState)
-  , "status" :: NullOrUndefined (CEStatus)
-  , "statusReason" :: NullOrUndefined (String)
-  , "computeResources" :: NullOrUndefined (ComputeResource)
-  , "serviceRole" :: NullOrUndefined (String)
+  , "type" :: Maybe (CEType)
+  , "state" :: Maybe (CEState)
+  , "status" :: Maybe (CEStatus)
+  , "statusReason" :: Maybe (String)
+  , "computeResources" :: Maybe (ComputeResource)
+  , "serviceRole" :: Maybe (String)
   }
 derive instance newtypeComputeEnvironmentDetail :: Newtype ComputeEnvironmentDetail _
 derive instance repGenericComputeEnvironmentDetail :: Generic ComputeEnvironmentDetail _
@@ -267,12 +266,12 @@ instance encodeComputeEnvironmentDetail :: Encode ComputeEnvironmentDetail where
 
 -- | Constructs ComputeEnvironmentDetail from required parameters
 newComputeEnvironmentDetail :: String -> String -> String -> ComputeEnvironmentDetail
-newComputeEnvironmentDetail _computeEnvironmentArn _computeEnvironmentName _ecsClusterArn = ComputeEnvironmentDetail { "computeEnvironmentArn": _computeEnvironmentArn, "computeEnvironmentName": _computeEnvironmentName, "ecsClusterArn": _ecsClusterArn, "computeResources": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newComputeEnvironmentDetail _computeEnvironmentArn _computeEnvironmentName _ecsClusterArn = ComputeEnvironmentDetail { "computeEnvironmentArn": _computeEnvironmentArn, "computeEnvironmentName": _computeEnvironmentName, "ecsClusterArn": _ecsClusterArn, "computeResources": Nothing, "serviceRole": Nothing, "state": Nothing, "status": Nothing, "statusReason": Nothing, "type": Nothing }
 
 -- | Constructs ComputeEnvironmentDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComputeEnvironmentDetail' :: String -> String -> String -> ( { "computeEnvironmentName" :: (String) , "computeEnvironmentArn" :: (String) , "ecsClusterArn" :: (String) , "type" :: NullOrUndefined (CEType) , "state" :: NullOrUndefined (CEState) , "status" :: NullOrUndefined (CEStatus) , "statusReason" :: NullOrUndefined (String) , "computeResources" :: NullOrUndefined (ComputeResource) , "serviceRole" :: NullOrUndefined (String) } -> {"computeEnvironmentName" :: (String) , "computeEnvironmentArn" :: (String) , "ecsClusterArn" :: (String) , "type" :: NullOrUndefined (CEType) , "state" :: NullOrUndefined (CEState) , "status" :: NullOrUndefined (CEStatus) , "statusReason" :: NullOrUndefined (String) , "computeResources" :: NullOrUndefined (ComputeResource) , "serviceRole" :: NullOrUndefined (String) } ) -> ComputeEnvironmentDetail
-newComputeEnvironmentDetail' _computeEnvironmentArn _computeEnvironmentName _ecsClusterArn customize = (ComputeEnvironmentDetail <<< customize) { "computeEnvironmentArn": _computeEnvironmentArn, "computeEnvironmentName": _computeEnvironmentName, "ecsClusterArn": _ecsClusterArn, "computeResources": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newComputeEnvironmentDetail' :: String -> String -> String -> ( { "computeEnvironmentName" :: (String) , "computeEnvironmentArn" :: (String) , "ecsClusterArn" :: (String) , "type" :: Maybe (CEType) , "state" :: Maybe (CEState) , "status" :: Maybe (CEStatus) , "statusReason" :: Maybe (String) , "computeResources" :: Maybe (ComputeResource) , "serviceRole" :: Maybe (String) } -> {"computeEnvironmentName" :: (String) , "computeEnvironmentArn" :: (String) , "ecsClusterArn" :: (String) , "type" :: Maybe (CEType) , "state" :: Maybe (CEState) , "status" :: Maybe (CEStatus) , "statusReason" :: Maybe (String) , "computeResources" :: Maybe (ComputeResource) , "serviceRole" :: Maybe (String) } ) -> ComputeEnvironmentDetail
+newComputeEnvironmentDetail' _computeEnvironmentArn _computeEnvironmentName _ecsClusterArn customize = (ComputeEnvironmentDetail <<< customize) { "computeEnvironmentArn": _computeEnvironmentArn, "computeEnvironmentName": _computeEnvironmentName, "ecsClusterArn": _ecsClusterArn, "computeResources": Nothing, "serviceRole": Nothing, "state": Nothing, "status": Nothing, "statusReason": Nothing, "type": Nothing }
 
 
 
@@ -321,16 +320,16 @@ newtype ComputeResource = ComputeResource
   { "type" :: (CRType)
   , "minvCpus" :: (Int)
   , "maxvCpus" :: (Int)
-  , "desiredvCpus" :: NullOrUndefined (Int)
+  , "desiredvCpus" :: Maybe (Int)
   , "instanceTypes" :: (StringList)
-  , "imageId" :: NullOrUndefined (String)
+  , "imageId" :: Maybe (String)
   , "subnets" :: (StringList)
   , "securityGroupIds" :: (StringList)
-  , "ec2KeyPair" :: NullOrUndefined (String)
+  , "ec2KeyPair" :: Maybe (String)
   , "instanceRole" :: (String)
-  , "tags" :: NullOrUndefined (TagsMap)
-  , "bidPercentage" :: NullOrUndefined (Int)
-  , "spotIamFleetRole" :: NullOrUndefined (String)
+  , "tags" :: Maybe (TagsMap)
+  , "bidPercentage" :: Maybe (Int)
+  , "spotIamFleetRole" :: Maybe (String)
   }
 derive instance newtypeComputeResource :: Newtype ComputeResource _
 derive instance repGenericComputeResource :: Generic ComputeResource _
@@ -340,20 +339,20 @@ instance encodeComputeResource :: Encode ComputeResource where encode = genericE
 
 -- | Constructs ComputeResource from required parameters
 newComputeResource :: String -> StringList -> Int -> Int -> StringList -> StringList -> CRType -> ComputeResource
-newComputeResource _instanceRole _instanceTypes _maxvCpus _minvCpus _securityGroupIds _subnets _type = ComputeResource { "instanceRole": _instanceRole, "instanceTypes": _instanceTypes, "maxvCpus": _maxvCpus, "minvCpus": _minvCpus, "securityGroupIds": _securityGroupIds, "subnets": _subnets, "type": _type, "bidPercentage": (NullOrUndefined Nothing), "desiredvCpus": (NullOrUndefined Nothing), "ec2KeyPair": (NullOrUndefined Nothing), "imageId": (NullOrUndefined Nothing), "spotIamFleetRole": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing) }
+newComputeResource _instanceRole _instanceTypes _maxvCpus _minvCpus _securityGroupIds _subnets _type = ComputeResource { "instanceRole": _instanceRole, "instanceTypes": _instanceTypes, "maxvCpus": _maxvCpus, "minvCpus": _minvCpus, "securityGroupIds": _securityGroupIds, "subnets": _subnets, "type": _type, "bidPercentage": Nothing, "desiredvCpus": Nothing, "ec2KeyPair": Nothing, "imageId": Nothing, "spotIamFleetRole": Nothing, "tags": Nothing }
 
 -- | Constructs ComputeResource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComputeResource' :: String -> StringList -> Int -> Int -> StringList -> StringList -> CRType -> ( { "type" :: (CRType) , "minvCpus" :: (Int) , "maxvCpus" :: (Int) , "desiredvCpus" :: NullOrUndefined (Int) , "instanceTypes" :: (StringList) , "imageId" :: NullOrUndefined (String) , "subnets" :: (StringList) , "securityGroupIds" :: (StringList) , "ec2KeyPair" :: NullOrUndefined (String) , "instanceRole" :: (String) , "tags" :: NullOrUndefined (TagsMap) , "bidPercentage" :: NullOrUndefined (Int) , "spotIamFleetRole" :: NullOrUndefined (String) } -> {"type" :: (CRType) , "minvCpus" :: (Int) , "maxvCpus" :: (Int) , "desiredvCpus" :: NullOrUndefined (Int) , "instanceTypes" :: (StringList) , "imageId" :: NullOrUndefined (String) , "subnets" :: (StringList) , "securityGroupIds" :: (StringList) , "ec2KeyPair" :: NullOrUndefined (String) , "instanceRole" :: (String) , "tags" :: NullOrUndefined (TagsMap) , "bidPercentage" :: NullOrUndefined (Int) , "spotIamFleetRole" :: NullOrUndefined (String) } ) -> ComputeResource
-newComputeResource' _instanceRole _instanceTypes _maxvCpus _minvCpus _securityGroupIds _subnets _type customize = (ComputeResource <<< customize) { "instanceRole": _instanceRole, "instanceTypes": _instanceTypes, "maxvCpus": _maxvCpus, "minvCpus": _minvCpus, "securityGroupIds": _securityGroupIds, "subnets": _subnets, "type": _type, "bidPercentage": (NullOrUndefined Nothing), "desiredvCpus": (NullOrUndefined Nothing), "ec2KeyPair": (NullOrUndefined Nothing), "imageId": (NullOrUndefined Nothing), "spotIamFleetRole": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing) }
+newComputeResource' :: String -> StringList -> Int -> Int -> StringList -> StringList -> CRType -> ( { "type" :: (CRType) , "minvCpus" :: (Int) , "maxvCpus" :: (Int) , "desiredvCpus" :: Maybe (Int) , "instanceTypes" :: (StringList) , "imageId" :: Maybe (String) , "subnets" :: (StringList) , "securityGroupIds" :: (StringList) , "ec2KeyPair" :: Maybe (String) , "instanceRole" :: (String) , "tags" :: Maybe (TagsMap) , "bidPercentage" :: Maybe (Int) , "spotIamFleetRole" :: Maybe (String) } -> {"type" :: (CRType) , "minvCpus" :: (Int) , "maxvCpus" :: (Int) , "desiredvCpus" :: Maybe (Int) , "instanceTypes" :: (StringList) , "imageId" :: Maybe (String) , "subnets" :: (StringList) , "securityGroupIds" :: (StringList) , "ec2KeyPair" :: Maybe (String) , "instanceRole" :: (String) , "tags" :: Maybe (TagsMap) , "bidPercentage" :: Maybe (Int) , "spotIamFleetRole" :: Maybe (String) } ) -> ComputeResource
+newComputeResource' _instanceRole _instanceTypes _maxvCpus _minvCpus _securityGroupIds _subnets _type customize = (ComputeResource <<< customize) { "instanceRole": _instanceRole, "instanceTypes": _instanceTypes, "maxvCpus": _maxvCpus, "minvCpus": _minvCpus, "securityGroupIds": _securityGroupIds, "subnets": _subnets, "type": _type, "bidPercentage": Nothing, "desiredvCpus": Nothing, "ec2KeyPair": Nothing, "imageId": Nothing, "spotIamFleetRole": Nothing, "tags": Nothing }
 
 
 
 -- | <p>An object representing the attributes of a compute environment that can be updated.</p>
 newtype ComputeResourceUpdate = ComputeResourceUpdate 
-  { "minvCpus" :: NullOrUndefined (Int)
-  , "maxvCpus" :: NullOrUndefined (Int)
-  , "desiredvCpus" :: NullOrUndefined (Int)
+  { "minvCpus" :: Maybe (Int)
+  , "maxvCpus" :: Maybe (Int)
+  , "desiredvCpus" :: Maybe (Int)
   }
 derive instance newtypeComputeResourceUpdate :: Newtype ComputeResourceUpdate _
 derive instance repGenericComputeResourceUpdate :: Generic ComputeResourceUpdate _
@@ -363,34 +362,34 @@ instance encodeComputeResourceUpdate :: Encode ComputeResourceUpdate where encod
 
 -- | Constructs ComputeResourceUpdate from required parameters
 newComputeResourceUpdate :: ComputeResourceUpdate
-newComputeResourceUpdate  = ComputeResourceUpdate { "desiredvCpus": (NullOrUndefined Nothing), "maxvCpus": (NullOrUndefined Nothing), "minvCpus": (NullOrUndefined Nothing) }
+newComputeResourceUpdate  = ComputeResourceUpdate { "desiredvCpus": Nothing, "maxvCpus": Nothing, "minvCpus": Nothing }
 
 -- | Constructs ComputeResourceUpdate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComputeResourceUpdate' :: ( { "minvCpus" :: NullOrUndefined (Int) , "maxvCpus" :: NullOrUndefined (Int) , "desiredvCpus" :: NullOrUndefined (Int) } -> {"minvCpus" :: NullOrUndefined (Int) , "maxvCpus" :: NullOrUndefined (Int) , "desiredvCpus" :: NullOrUndefined (Int) } ) -> ComputeResourceUpdate
-newComputeResourceUpdate'  customize = (ComputeResourceUpdate <<< customize) { "desiredvCpus": (NullOrUndefined Nothing), "maxvCpus": (NullOrUndefined Nothing), "minvCpus": (NullOrUndefined Nothing) }
+newComputeResourceUpdate' :: ( { "minvCpus" :: Maybe (Int) , "maxvCpus" :: Maybe (Int) , "desiredvCpus" :: Maybe (Int) } -> {"minvCpus" :: Maybe (Int) , "maxvCpus" :: Maybe (Int) , "desiredvCpus" :: Maybe (Int) } ) -> ComputeResourceUpdate
+newComputeResourceUpdate'  customize = (ComputeResourceUpdate <<< customize) { "desiredvCpus": Nothing, "maxvCpus": Nothing, "minvCpus": Nothing }
 
 
 
 -- | <p>An object representing the details of a container that is part of a job.</p>
 newtype ContainerDetail = ContainerDetail 
-  { "image" :: NullOrUndefined (String)
-  , "vcpus" :: NullOrUndefined (Int)
-  , "memory" :: NullOrUndefined (Int)
-  , "command" :: NullOrUndefined (StringList)
-  , "jobRoleArn" :: NullOrUndefined (String)
-  , "volumes" :: NullOrUndefined (Volumes)
-  , "environment" :: NullOrUndefined (EnvironmentVariables)
-  , "mountPoints" :: NullOrUndefined (MountPoints)
-  , "readonlyRootFilesystem" :: NullOrUndefined (Boolean)
-  , "ulimits" :: NullOrUndefined (Ulimits)
-  , "privileged" :: NullOrUndefined (Boolean)
-  , "user" :: NullOrUndefined (String)
-  , "exitCode" :: NullOrUndefined (Int)
-  , "reason" :: NullOrUndefined (String)
-  , "containerInstanceArn" :: NullOrUndefined (String)
-  , "taskArn" :: NullOrUndefined (String)
-  , "logStreamName" :: NullOrUndefined (String)
+  { "image" :: Maybe (String)
+  , "vcpus" :: Maybe (Int)
+  , "memory" :: Maybe (Int)
+  , "command" :: Maybe (StringList)
+  , "jobRoleArn" :: Maybe (String)
+  , "volumes" :: Maybe (Volumes)
+  , "environment" :: Maybe (EnvironmentVariables)
+  , "mountPoints" :: Maybe (MountPoints)
+  , "readonlyRootFilesystem" :: Maybe (Boolean)
+  , "ulimits" :: Maybe (Ulimits)
+  , "privileged" :: Maybe (Boolean)
+  , "user" :: Maybe (String)
+  , "exitCode" :: Maybe (Int)
+  , "reason" :: Maybe (String)
+  , "containerInstanceArn" :: Maybe (String)
+  , "taskArn" :: Maybe (String)
+  , "logStreamName" :: Maybe (String)
   }
 derive instance newtypeContainerDetail :: Newtype ContainerDetail _
 derive instance repGenericContainerDetail :: Generic ContainerDetail _
@@ -400,21 +399,21 @@ instance encodeContainerDetail :: Encode ContainerDetail where encode = genericE
 
 -- | Constructs ContainerDetail from required parameters
 newContainerDetail :: ContainerDetail
-newContainerDetail  = ContainerDetail { "command": (NullOrUndefined Nothing), "containerInstanceArn": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "exitCode": (NullOrUndefined Nothing), "image": (NullOrUndefined Nothing), "jobRoleArn": (NullOrUndefined Nothing), "logStreamName": (NullOrUndefined Nothing), "memory": (NullOrUndefined Nothing), "mountPoints": (NullOrUndefined Nothing), "privileged": (NullOrUndefined Nothing), "readonlyRootFilesystem": (NullOrUndefined Nothing), "reason": (NullOrUndefined Nothing), "taskArn": (NullOrUndefined Nothing), "ulimits": (NullOrUndefined Nothing), "user": (NullOrUndefined Nothing), "vcpus": (NullOrUndefined Nothing), "volumes": (NullOrUndefined Nothing) }
+newContainerDetail  = ContainerDetail { "command": Nothing, "containerInstanceArn": Nothing, "environment": Nothing, "exitCode": Nothing, "image": Nothing, "jobRoleArn": Nothing, "logStreamName": Nothing, "memory": Nothing, "mountPoints": Nothing, "privileged": Nothing, "readonlyRootFilesystem": Nothing, "reason": Nothing, "taskArn": Nothing, "ulimits": Nothing, "user": Nothing, "vcpus": Nothing, "volumes": Nothing }
 
 -- | Constructs ContainerDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newContainerDetail' :: ( { "image" :: NullOrUndefined (String) , "vcpus" :: NullOrUndefined (Int) , "memory" :: NullOrUndefined (Int) , "command" :: NullOrUndefined (StringList) , "jobRoleArn" :: NullOrUndefined (String) , "volumes" :: NullOrUndefined (Volumes) , "environment" :: NullOrUndefined (EnvironmentVariables) , "mountPoints" :: NullOrUndefined (MountPoints) , "readonlyRootFilesystem" :: NullOrUndefined (Boolean) , "ulimits" :: NullOrUndefined (Ulimits) , "privileged" :: NullOrUndefined (Boolean) , "user" :: NullOrUndefined (String) , "exitCode" :: NullOrUndefined (Int) , "reason" :: NullOrUndefined (String) , "containerInstanceArn" :: NullOrUndefined (String) , "taskArn" :: NullOrUndefined (String) , "logStreamName" :: NullOrUndefined (String) } -> {"image" :: NullOrUndefined (String) , "vcpus" :: NullOrUndefined (Int) , "memory" :: NullOrUndefined (Int) , "command" :: NullOrUndefined (StringList) , "jobRoleArn" :: NullOrUndefined (String) , "volumes" :: NullOrUndefined (Volumes) , "environment" :: NullOrUndefined (EnvironmentVariables) , "mountPoints" :: NullOrUndefined (MountPoints) , "readonlyRootFilesystem" :: NullOrUndefined (Boolean) , "ulimits" :: NullOrUndefined (Ulimits) , "privileged" :: NullOrUndefined (Boolean) , "user" :: NullOrUndefined (String) , "exitCode" :: NullOrUndefined (Int) , "reason" :: NullOrUndefined (String) , "containerInstanceArn" :: NullOrUndefined (String) , "taskArn" :: NullOrUndefined (String) , "logStreamName" :: NullOrUndefined (String) } ) -> ContainerDetail
-newContainerDetail'  customize = (ContainerDetail <<< customize) { "command": (NullOrUndefined Nothing), "containerInstanceArn": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "exitCode": (NullOrUndefined Nothing), "image": (NullOrUndefined Nothing), "jobRoleArn": (NullOrUndefined Nothing), "logStreamName": (NullOrUndefined Nothing), "memory": (NullOrUndefined Nothing), "mountPoints": (NullOrUndefined Nothing), "privileged": (NullOrUndefined Nothing), "readonlyRootFilesystem": (NullOrUndefined Nothing), "reason": (NullOrUndefined Nothing), "taskArn": (NullOrUndefined Nothing), "ulimits": (NullOrUndefined Nothing), "user": (NullOrUndefined Nothing), "vcpus": (NullOrUndefined Nothing), "volumes": (NullOrUndefined Nothing) }
+newContainerDetail' :: ( { "image" :: Maybe (String) , "vcpus" :: Maybe (Int) , "memory" :: Maybe (Int) , "command" :: Maybe (StringList) , "jobRoleArn" :: Maybe (String) , "volumes" :: Maybe (Volumes) , "environment" :: Maybe (EnvironmentVariables) , "mountPoints" :: Maybe (MountPoints) , "readonlyRootFilesystem" :: Maybe (Boolean) , "ulimits" :: Maybe (Ulimits) , "privileged" :: Maybe (Boolean) , "user" :: Maybe (String) , "exitCode" :: Maybe (Int) , "reason" :: Maybe (String) , "containerInstanceArn" :: Maybe (String) , "taskArn" :: Maybe (String) , "logStreamName" :: Maybe (String) } -> {"image" :: Maybe (String) , "vcpus" :: Maybe (Int) , "memory" :: Maybe (Int) , "command" :: Maybe (StringList) , "jobRoleArn" :: Maybe (String) , "volumes" :: Maybe (Volumes) , "environment" :: Maybe (EnvironmentVariables) , "mountPoints" :: Maybe (MountPoints) , "readonlyRootFilesystem" :: Maybe (Boolean) , "ulimits" :: Maybe (Ulimits) , "privileged" :: Maybe (Boolean) , "user" :: Maybe (String) , "exitCode" :: Maybe (Int) , "reason" :: Maybe (String) , "containerInstanceArn" :: Maybe (String) , "taskArn" :: Maybe (String) , "logStreamName" :: Maybe (String) } ) -> ContainerDetail
+newContainerDetail'  customize = (ContainerDetail <<< customize) { "command": Nothing, "containerInstanceArn": Nothing, "environment": Nothing, "exitCode": Nothing, "image": Nothing, "jobRoleArn": Nothing, "logStreamName": Nothing, "memory": Nothing, "mountPoints": Nothing, "privileged": Nothing, "readonlyRootFilesystem": Nothing, "reason": Nothing, "taskArn": Nothing, "ulimits": Nothing, "user": Nothing, "vcpus": Nothing, "volumes": Nothing }
 
 
 
 -- | <p>The overrides that should be sent to a container.</p>
 newtype ContainerOverrides = ContainerOverrides 
-  { "vcpus" :: NullOrUndefined (Int)
-  , "memory" :: NullOrUndefined (Int)
-  , "command" :: NullOrUndefined (StringList)
-  , "environment" :: NullOrUndefined (EnvironmentVariables)
+  { "vcpus" :: Maybe (Int)
+  , "memory" :: Maybe (Int)
+  , "command" :: Maybe (StringList)
+  , "environment" :: Maybe (EnvironmentVariables)
   }
 derive instance newtypeContainerOverrides :: Newtype ContainerOverrides _
 derive instance repGenericContainerOverrides :: Generic ContainerOverrides _
@@ -424,12 +423,12 @@ instance encodeContainerOverrides :: Encode ContainerOverrides where encode = ge
 
 -- | Constructs ContainerOverrides from required parameters
 newContainerOverrides :: ContainerOverrides
-newContainerOverrides  = ContainerOverrides { "command": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "memory": (NullOrUndefined Nothing), "vcpus": (NullOrUndefined Nothing) }
+newContainerOverrides  = ContainerOverrides { "command": Nothing, "environment": Nothing, "memory": Nothing, "vcpus": Nothing }
 
 -- | Constructs ContainerOverrides's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newContainerOverrides' :: ( { "vcpus" :: NullOrUndefined (Int) , "memory" :: NullOrUndefined (Int) , "command" :: NullOrUndefined (StringList) , "environment" :: NullOrUndefined (EnvironmentVariables) } -> {"vcpus" :: NullOrUndefined (Int) , "memory" :: NullOrUndefined (Int) , "command" :: NullOrUndefined (StringList) , "environment" :: NullOrUndefined (EnvironmentVariables) } ) -> ContainerOverrides
-newContainerOverrides'  customize = (ContainerOverrides <<< customize) { "command": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "memory": (NullOrUndefined Nothing), "vcpus": (NullOrUndefined Nothing) }
+newContainerOverrides' :: ( { "vcpus" :: Maybe (Int) , "memory" :: Maybe (Int) , "command" :: Maybe (StringList) , "environment" :: Maybe (EnvironmentVariables) } -> {"vcpus" :: Maybe (Int) , "memory" :: Maybe (Int) , "command" :: Maybe (StringList) , "environment" :: Maybe (EnvironmentVariables) } ) -> ContainerOverrides
+newContainerOverrides'  customize = (ContainerOverrides <<< customize) { "command": Nothing, "environment": Nothing, "memory": Nothing, "vcpus": Nothing }
 
 
 
@@ -438,15 +437,15 @@ newtype ContainerProperties = ContainerProperties
   { "image" :: (String)
   , "vcpus" :: (Int)
   , "memory" :: (Int)
-  , "command" :: NullOrUndefined (StringList)
-  , "jobRoleArn" :: NullOrUndefined (String)
-  , "volumes" :: NullOrUndefined (Volumes)
-  , "environment" :: NullOrUndefined (EnvironmentVariables)
-  , "mountPoints" :: NullOrUndefined (MountPoints)
-  , "readonlyRootFilesystem" :: NullOrUndefined (Boolean)
-  , "privileged" :: NullOrUndefined (Boolean)
-  , "ulimits" :: NullOrUndefined (Ulimits)
-  , "user" :: NullOrUndefined (String)
+  , "command" :: Maybe (StringList)
+  , "jobRoleArn" :: Maybe (String)
+  , "volumes" :: Maybe (Volumes)
+  , "environment" :: Maybe (EnvironmentVariables)
+  , "mountPoints" :: Maybe (MountPoints)
+  , "readonlyRootFilesystem" :: Maybe (Boolean)
+  , "privileged" :: Maybe (Boolean)
+  , "ulimits" :: Maybe (Ulimits)
+  , "user" :: Maybe (String)
   }
 derive instance newtypeContainerProperties :: Newtype ContainerProperties _
 derive instance repGenericContainerProperties :: Generic ContainerProperties _
@@ -456,19 +455,19 @@ instance encodeContainerProperties :: Encode ContainerProperties where encode = 
 
 -- | Constructs ContainerProperties from required parameters
 newContainerProperties :: String -> Int -> Int -> ContainerProperties
-newContainerProperties _image _memory _vcpus = ContainerProperties { "image": _image, "memory": _memory, "vcpus": _vcpus, "command": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "jobRoleArn": (NullOrUndefined Nothing), "mountPoints": (NullOrUndefined Nothing), "privileged": (NullOrUndefined Nothing), "readonlyRootFilesystem": (NullOrUndefined Nothing), "ulimits": (NullOrUndefined Nothing), "user": (NullOrUndefined Nothing), "volumes": (NullOrUndefined Nothing) }
+newContainerProperties _image _memory _vcpus = ContainerProperties { "image": _image, "memory": _memory, "vcpus": _vcpus, "command": Nothing, "environment": Nothing, "jobRoleArn": Nothing, "mountPoints": Nothing, "privileged": Nothing, "readonlyRootFilesystem": Nothing, "ulimits": Nothing, "user": Nothing, "volumes": Nothing }
 
 -- | Constructs ContainerProperties's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newContainerProperties' :: String -> Int -> Int -> ( { "image" :: (String) , "vcpus" :: (Int) , "memory" :: (Int) , "command" :: NullOrUndefined (StringList) , "jobRoleArn" :: NullOrUndefined (String) , "volumes" :: NullOrUndefined (Volumes) , "environment" :: NullOrUndefined (EnvironmentVariables) , "mountPoints" :: NullOrUndefined (MountPoints) , "readonlyRootFilesystem" :: NullOrUndefined (Boolean) , "privileged" :: NullOrUndefined (Boolean) , "ulimits" :: NullOrUndefined (Ulimits) , "user" :: NullOrUndefined (String) } -> {"image" :: (String) , "vcpus" :: (Int) , "memory" :: (Int) , "command" :: NullOrUndefined (StringList) , "jobRoleArn" :: NullOrUndefined (String) , "volumes" :: NullOrUndefined (Volumes) , "environment" :: NullOrUndefined (EnvironmentVariables) , "mountPoints" :: NullOrUndefined (MountPoints) , "readonlyRootFilesystem" :: NullOrUndefined (Boolean) , "privileged" :: NullOrUndefined (Boolean) , "ulimits" :: NullOrUndefined (Ulimits) , "user" :: NullOrUndefined (String) } ) -> ContainerProperties
-newContainerProperties' _image _memory _vcpus customize = (ContainerProperties <<< customize) { "image": _image, "memory": _memory, "vcpus": _vcpus, "command": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "jobRoleArn": (NullOrUndefined Nothing), "mountPoints": (NullOrUndefined Nothing), "privileged": (NullOrUndefined Nothing), "readonlyRootFilesystem": (NullOrUndefined Nothing), "ulimits": (NullOrUndefined Nothing), "user": (NullOrUndefined Nothing), "volumes": (NullOrUndefined Nothing) }
+newContainerProperties' :: String -> Int -> Int -> ( { "image" :: (String) , "vcpus" :: (Int) , "memory" :: (Int) , "command" :: Maybe (StringList) , "jobRoleArn" :: Maybe (String) , "volumes" :: Maybe (Volumes) , "environment" :: Maybe (EnvironmentVariables) , "mountPoints" :: Maybe (MountPoints) , "readonlyRootFilesystem" :: Maybe (Boolean) , "privileged" :: Maybe (Boolean) , "ulimits" :: Maybe (Ulimits) , "user" :: Maybe (String) } -> {"image" :: (String) , "vcpus" :: (Int) , "memory" :: (Int) , "command" :: Maybe (StringList) , "jobRoleArn" :: Maybe (String) , "volumes" :: Maybe (Volumes) , "environment" :: Maybe (EnvironmentVariables) , "mountPoints" :: Maybe (MountPoints) , "readonlyRootFilesystem" :: Maybe (Boolean) , "privileged" :: Maybe (Boolean) , "ulimits" :: Maybe (Ulimits) , "user" :: Maybe (String) } ) -> ContainerProperties
+newContainerProperties' _image _memory _vcpus customize = (ContainerProperties <<< customize) { "image": _image, "memory": _memory, "vcpus": _vcpus, "command": Nothing, "environment": Nothing, "jobRoleArn": Nothing, "mountPoints": Nothing, "privileged": Nothing, "readonlyRootFilesystem": Nothing, "ulimits": Nothing, "user": Nothing, "volumes": Nothing }
 
 
 
 -- | <p>An object representing summary details of a container within a job.</p>
 newtype ContainerSummary = ContainerSummary 
-  { "exitCode" :: NullOrUndefined (Int)
-  , "reason" :: NullOrUndefined (String)
+  { "exitCode" :: Maybe (Int)
+  , "reason" :: Maybe (String)
   }
 derive instance newtypeContainerSummary :: Newtype ContainerSummary _
 derive instance repGenericContainerSummary :: Generic ContainerSummary _
@@ -478,20 +477,20 @@ instance encodeContainerSummary :: Encode ContainerSummary where encode = generi
 
 -- | Constructs ContainerSummary from required parameters
 newContainerSummary :: ContainerSummary
-newContainerSummary  = ContainerSummary { "exitCode": (NullOrUndefined Nothing), "reason": (NullOrUndefined Nothing) }
+newContainerSummary  = ContainerSummary { "exitCode": Nothing, "reason": Nothing }
 
 -- | Constructs ContainerSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newContainerSummary' :: ( { "exitCode" :: NullOrUndefined (Int) , "reason" :: NullOrUndefined (String) } -> {"exitCode" :: NullOrUndefined (Int) , "reason" :: NullOrUndefined (String) } ) -> ContainerSummary
-newContainerSummary'  customize = (ContainerSummary <<< customize) { "exitCode": (NullOrUndefined Nothing), "reason": (NullOrUndefined Nothing) }
+newContainerSummary' :: ( { "exitCode" :: Maybe (Int) , "reason" :: Maybe (String) } -> {"exitCode" :: Maybe (Int) , "reason" :: Maybe (String) } ) -> ContainerSummary
+newContainerSummary'  customize = (ContainerSummary <<< customize) { "exitCode": Nothing, "reason": Nothing }
 
 
 
 newtype CreateComputeEnvironmentRequest = CreateComputeEnvironmentRequest 
   { "computeEnvironmentName" :: (String)
   , "type" :: (CEType)
-  , "state" :: NullOrUndefined (CEState)
-  , "computeResources" :: NullOrUndefined (ComputeResource)
+  , "state" :: Maybe (CEState)
+  , "computeResources" :: Maybe (ComputeResource)
   , "serviceRole" :: (String)
   }
 derive instance newtypeCreateComputeEnvironmentRequest :: Newtype CreateComputeEnvironmentRequest _
@@ -502,18 +501,18 @@ instance encodeCreateComputeEnvironmentRequest :: Encode CreateComputeEnvironmen
 
 -- | Constructs CreateComputeEnvironmentRequest from required parameters
 newCreateComputeEnvironmentRequest :: String -> String -> CEType -> CreateComputeEnvironmentRequest
-newCreateComputeEnvironmentRequest _computeEnvironmentName _serviceRole _type = CreateComputeEnvironmentRequest { "computeEnvironmentName": _computeEnvironmentName, "serviceRole": _serviceRole, "type": _type, "computeResources": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newCreateComputeEnvironmentRequest _computeEnvironmentName _serviceRole _type = CreateComputeEnvironmentRequest { "computeEnvironmentName": _computeEnvironmentName, "serviceRole": _serviceRole, "type": _type, "computeResources": Nothing, "state": Nothing }
 
 -- | Constructs CreateComputeEnvironmentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateComputeEnvironmentRequest' :: String -> String -> CEType -> ( { "computeEnvironmentName" :: (String) , "type" :: (CEType) , "state" :: NullOrUndefined (CEState) , "computeResources" :: NullOrUndefined (ComputeResource) , "serviceRole" :: (String) } -> {"computeEnvironmentName" :: (String) , "type" :: (CEType) , "state" :: NullOrUndefined (CEState) , "computeResources" :: NullOrUndefined (ComputeResource) , "serviceRole" :: (String) } ) -> CreateComputeEnvironmentRequest
-newCreateComputeEnvironmentRequest' _computeEnvironmentName _serviceRole _type customize = (CreateComputeEnvironmentRequest <<< customize) { "computeEnvironmentName": _computeEnvironmentName, "serviceRole": _serviceRole, "type": _type, "computeResources": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newCreateComputeEnvironmentRequest' :: String -> String -> CEType -> ( { "computeEnvironmentName" :: (String) , "type" :: (CEType) , "state" :: Maybe (CEState) , "computeResources" :: Maybe (ComputeResource) , "serviceRole" :: (String) } -> {"computeEnvironmentName" :: (String) , "type" :: (CEType) , "state" :: Maybe (CEState) , "computeResources" :: Maybe (ComputeResource) , "serviceRole" :: (String) } ) -> CreateComputeEnvironmentRequest
+newCreateComputeEnvironmentRequest' _computeEnvironmentName _serviceRole _type customize = (CreateComputeEnvironmentRequest <<< customize) { "computeEnvironmentName": _computeEnvironmentName, "serviceRole": _serviceRole, "type": _type, "computeResources": Nothing, "state": Nothing }
 
 
 
 newtype CreateComputeEnvironmentResponse = CreateComputeEnvironmentResponse 
-  { "computeEnvironmentName" :: NullOrUndefined (String)
-  , "computeEnvironmentArn" :: NullOrUndefined (String)
+  { "computeEnvironmentName" :: Maybe (String)
+  , "computeEnvironmentArn" :: Maybe (String)
   }
 derive instance newtypeCreateComputeEnvironmentResponse :: Newtype CreateComputeEnvironmentResponse _
 derive instance repGenericCreateComputeEnvironmentResponse :: Generic CreateComputeEnvironmentResponse _
@@ -523,18 +522,18 @@ instance encodeCreateComputeEnvironmentResponse :: Encode CreateComputeEnvironme
 
 -- | Constructs CreateComputeEnvironmentResponse from required parameters
 newCreateComputeEnvironmentResponse :: CreateComputeEnvironmentResponse
-newCreateComputeEnvironmentResponse  = CreateComputeEnvironmentResponse { "computeEnvironmentArn": (NullOrUndefined Nothing), "computeEnvironmentName": (NullOrUndefined Nothing) }
+newCreateComputeEnvironmentResponse  = CreateComputeEnvironmentResponse { "computeEnvironmentArn": Nothing, "computeEnvironmentName": Nothing }
 
 -- | Constructs CreateComputeEnvironmentResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateComputeEnvironmentResponse' :: ( { "computeEnvironmentName" :: NullOrUndefined (String) , "computeEnvironmentArn" :: NullOrUndefined (String) } -> {"computeEnvironmentName" :: NullOrUndefined (String) , "computeEnvironmentArn" :: NullOrUndefined (String) } ) -> CreateComputeEnvironmentResponse
-newCreateComputeEnvironmentResponse'  customize = (CreateComputeEnvironmentResponse <<< customize) { "computeEnvironmentArn": (NullOrUndefined Nothing), "computeEnvironmentName": (NullOrUndefined Nothing) }
+newCreateComputeEnvironmentResponse' :: ( { "computeEnvironmentName" :: Maybe (String) , "computeEnvironmentArn" :: Maybe (String) } -> {"computeEnvironmentName" :: Maybe (String) , "computeEnvironmentArn" :: Maybe (String) } ) -> CreateComputeEnvironmentResponse
+newCreateComputeEnvironmentResponse'  customize = (CreateComputeEnvironmentResponse <<< customize) { "computeEnvironmentArn": Nothing, "computeEnvironmentName": Nothing }
 
 
 
 newtype CreateJobQueueRequest = CreateJobQueueRequest 
   { "jobQueueName" :: (String)
-  , "state" :: NullOrUndefined (JQState)
+  , "state" :: Maybe (JQState)
   , "priority" :: (Int)
   , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders)
   }
@@ -546,12 +545,12 @@ instance encodeCreateJobQueueRequest :: Encode CreateJobQueueRequest where encod
 
 -- | Constructs CreateJobQueueRequest from required parameters
 newCreateJobQueueRequest :: ComputeEnvironmentOrders -> String -> Int -> CreateJobQueueRequest
-newCreateJobQueueRequest _computeEnvironmentOrder _jobQueueName _priority = CreateJobQueueRequest { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueName": _jobQueueName, "priority": _priority, "state": (NullOrUndefined Nothing) }
+newCreateJobQueueRequest _computeEnvironmentOrder _jobQueueName _priority = CreateJobQueueRequest { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueName": _jobQueueName, "priority": _priority, "state": Nothing }
 
 -- | Constructs CreateJobQueueRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateJobQueueRequest' :: ComputeEnvironmentOrders -> String -> Int -> ( { "jobQueueName" :: (String) , "state" :: NullOrUndefined (JQState) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } -> {"jobQueueName" :: (String) , "state" :: NullOrUndefined (JQState) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } ) -> CreateJobQueueRequest
-newCreateJobQueueRequest' _computeEnvironmentOrder _jobQueueName _priority customize = (CreateJobQueueRequest <<< customize) { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueName": _jobQueueName, "priority": _priority, "state": (NullOrUndefined Nothing) }
+newCreateJobQueueRequest' :: ComputeEnvironmentOrders -> String -> Int -> ( { "jobQueueName" :: (String) , "state" :: Maybe (JQState) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } -> {"jobQueueName" :: (String) , "state" :: Maybe (JQState) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } ) -> CreateJobQueueRequest
+newCreateJobQueueRequest' _computeEnvironmentOrder _jobQueueName _priority customize = (CreateJobQueueRequest <<< customize) { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueName": _jobQueueName, "priority": _priority, "state": Nothing }
 
 
 
@@ -664,9 +663,9 @@ instance encodeDeregisterJobDefinitionResponse :: Encode DeregisterJobDefinition
 
 
 newtype DescribeComputeEnvironmentsRequest = DescribeComputeEnvironmentsRequest 
-  { "computeEnvironments" :: NullOrUndefined (StringList)
-  , "maxResults" :: NullOrUndefined (Int)
-  , "nextToken" :: NullOrUndefined (String)
+  { "computeEnvironments" :: Maybe (StringList)
+  , "maxResults" :: Maybe (Int)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeComputeEnvironmentsRequest :: Newtype DescribeComputeEnvironmentsRequest _
 derive instance repGenericDescribeComputeEnvironmentsRequest :: Generic DescribeComputeEnvironmentsRequest _
@@ -676,18 +675,18 @@ instance encodeDescribeComputeEnvironmentsRequest :: Encode DescribeComputeEnvir
 
 -- | Constructs DescribeComputeEnvironmentsRequest from required parameters
 newDescribeComputeEnvironmentsRequest :: DescribeComputeEnvironmentsRequest
-newDescribeComputeEnvironmentsRequest  = DescribeComputeEnvironmentsRequest { "computeEnvironments": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeComputeEnvironmentsRequest  = DescribeComputeEnvironmentsRequest { "computeEnvironments": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeComputeEnvironmentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeComputeEnvironmentsRequest' :: ( { "computeEnvironments" :: NullOrUndefined (StringList) , "maxResults" :: NullOrUndefined (Int) , "nextToken" :: NullOrUndefined (String) } -> {"computeEnvironments" :: NullOrUndefined (StringList) , "maxResults" :: NullOrUndefined (Int) , "nextToken" :: NullOrUndefined (String) } ) -> DescribeComputeEnvironmentsRequest
-newDescribeComputeEnvironmentsRequest'  customize = (DescribeComputeEnvironmentsRequest <<< customize) { "computeEnvironments": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeComputeEnvironmentsRequest' :: ( { "computeEnvironments" :: Maybe (StringList) , "maxResults" :: Maybe (Int) , "nextToken" :: Maybe (String) } -> {"computeEnvironments" :: Maybe (StringList) , "maxResults" :: Maybe (Int) , "nextToken" :: Maybe (String) } ) -> DescribeComputeEnvironmentsRequest
+newDescribeComputeEnvironmentsRequest'  customize = (DescribeComputeEnvironmentsRequest <<< customize) { "computeEnvironments": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 newtype DescribeComputeEnvironmentsResponse = DescribeComputeEnvironmentsResponse 
-  { "computeEnvironments" :: NullOrUndefined (ComputeEnvironmentDetailList)
-  , "nextToken" :: NullOrUndefined (String)
+  { "computeEnvironments" :: Maybe (ComputeEnvironmentDetailList)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeComputeEnvironmentsResponse :: Newtype DescribeComputeEnvironmentsResponse _
 derive instance repGenericDescribeComputeEnvironmentsResponse :: Generic DescribeComputeEnvironmentsResponse _
@@ -697,21 +696,21 @@ instance encodeDescribeComputeEnvironmentsResponse :: Encode DescribeComputeEnvi
 
 -- | Constructs DescribeComputeEnvironmentsResponse from required parameters
 newDescribeComputeEnvironmentsResponse :: DescribeComputeEnvironmentsResponse
-newDescribeComputeEnvironmentsResponse  = DescribeComputeEnvironmentsResponse { "computeEnvironments": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeComputeEnvironmentsResponse  = DescribeComputeEnvironmentsResponse { "computeEnvironments": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeComputeEnvironmentsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeComputeEnvironmentsResponse' :: ( { "computeEnvironments" :: NullOrUndefined (ComputeEnvironmentDetailList) , "nextToken" :: NullOrUndefined (String) } -> {"computeEnvironments" :: NullOrUndefined (ComputeEnvironmentDetailList) , "nextToken" :: NullOrUndefined (String) } ) -> DescribeComputeEnvironmentsResponse
-newDescribeComputeEnvironmentsResponse'  customize = (DescribeComputeEnvironmentsResponse <<< customize) { "computeEnvironments": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeComputeEnvironmentsResponse' :: ( { "computeEnvironments" :: Maybe (ComputeEnvironmentDetailList) , "nextToken" :: Maybe (String) } -> {"computeEnvironments" :: Maybe (ComputeEnvironmentDetailList) , "nextToken" :: Maybe (String) } ) -> DescribeComputeEnvironmentsResponse
+newDescribeComputeEnvironmentsResponse'  customize = (DescribeComputeEnvironmentsResponse <<< customize) { "computeEnvironments": Nothing, "nextToken": Nothing }
 
 
 
 newtype DescribeJobDefinitionsRequest = DescribeJobDefinitionsRequest 
-  { "jobDefinitions" :: NullOrUndefined (StringList)
-  , "maxResults" :: NullOrUndefined (Int)
-  , "jobDefinitionName" :: NullOrUndefined (String)
-  , "status" :: NullOrUndefined (String)
-  , "nextToken" :: NullOrUndefined (String)
+  { "jobDefinitions" :: Maybe (StringList)
+  , "maxResults" :: Maybe (Int)
+  , "jobDefinitionName" :: Maybe (String)
+  , "status" :: Maybe (String)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeJobDefinitionsRequest :: Newtype DescribeJobDefinitionsRequest _
 derive instance repGenericDescribeJobDefinitionsRequest :: Generic DescribeJobDefinitionsRequest _
@@ -721,18 +720,18 @@ instance encodeDescribeJobDefinitionsRequest :: Encode DescribeJobDefinitionsReq
 
 -- | Constructs DescribeJobDefinitionsRequest from required parameters
 newDescribeJobDefinitionsRequest :: DescribeJobDefinitionsRequest
-newDescribeJobDefinitionsRequest  = DescribeJobDefinitionsRequest { "jobDefinitionName": (NullOrUndefined Nothing), "jobDefinitions": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newDescribeJobDefinitionsRequest  = DescribeJobDefinitionsRequest { "jobDefinitionName": Nothing, "jobDefinitions": Nothing, "maxResults": Nothing, "nextToken": Nothing, "status": Nothing }
 
 -- | Constructs DescribeJobDefinitionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobDefinitionsRequest' :: ( { "jobDefinitions" :: NullOrUndefined (StringList) , "maxResults" :: NullOrUndefined (Int) , "jobDefinitionName" :: NullOrUndefined (String) , "status" :: NullOrUndefined (String) , "nextToken" :: NullOrUndefined (String) } -> {"jobDefinitions" :: NullOrUndefined (StringList) , "maxResults" :: NullOrUndefined (Int) , "jobDefinitionName" :: NullOrUndefined (String) , "status" :: NullOrUndefined (String) , "nextToken" :: NullOrUndefined (String) } ) -> DescribeJobDefinitionsRequest
-newDescribeJobDefinitionsRequest'  customize = (DescribeJobDefinitionsRequest <<< customize) { "jobDefinitionName": (NullOrUndefined Nothing), "jobDefinitions": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newDescribeJobDefinitionsRequest' :: ( { "jobDefinitions" :: Maybe (StringList) , "maxResults" :: Maybe (Int) , "jobDefinitionName" :: Maybe (String) , "status" :: Maybe (String) , "nextToken" :: Maybe (String) } -> {"jobDefinitions" :: Maybe (StringList) , "maxResults" :: Maybe (Int) , "jobDefinitionName" :: Maybe (String) , "status" :: Maybe (String) , "nextToken" :: Maybe (String) } ) -> DescribeJobDefinitionsRequest
+newDescribeJobDefinitionsRequest'  customize = (DescribeJobDefinitionsRequest <<< customize) { "jobDefinitionName": Nothing, "jobDefinitions": Nothing, "maxResults": Nothing, "nextToken": Nothing, "status": Nothing }
 
 
 
 newtype DescribeJobDefinitionsResponse = DescribeJobDefinitionsResponse 
-  { "jobDefinitions" :: NullOrUndefined (JobDefinitionList)
-  , "nextToken" :: NullOrUndefined (String)
+  { "jobDefinitions" :: Maybe (JobDefinitionList)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeJobDefinitionsResponse :: Newtype DescribeJobDefinitionsResponse _
 derive instance repGenericDescribeJobDefinitionsResponse :: Generic DescribeJobDefinitionsResponse _
@@ -742,19 +741,19 @@ instance encodeDescribeJobDefinitionsResponse :: Encode DescribeJobDefinitionsRe
 
 -- | Constructs DescribeJobDefinitionsResponse from required parameters
 newDescribeJobDefinitionsResponse :: DescribeJobDefinitionsResponse
-newDescribeJobDefinitionsResponse  = DescribeJobDefinitionsResponse { "jobDefinitions": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeJobDefinitionsResponse  = DescribeJobDefinitionsResponse { "jobDefinitions": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeJobDefinitionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobDefinitionsResponse' :: ( { "jobDefinitions" :: NullOrUndefined (JobDefinitionList) , "nextToken" :: NullOrUndefined (String) } -> {"jobDefinitions" :: NullOrUndefined (JobDefinitionList) , "nextToken" :: NullOrUndefined (String) } ) -> DescribeJobDefinitionsResponse
-newDescribeJobDefinitionsResponse'  customize = (DescribeJobDefinitionsResponse <<< customize) { "jobDefinitions": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeJobDefinitionsResponse' :: ( { "jobDefinitions" :: Maybe (JobDefinitionList) , "nextToken" :: Maybe (String) } -> {"jobDefinitions" :: Maybe (JobDefinitionList) , "nextToken" :: Maybe (String) } ) -> DescribeJobDefinitionsResponse
+newDescribeJobDefinitionsResponse'  customize = (DescribeJobDefinitionsResponse <<< customize) { "jobDefinitions": Nothing, "nextToken": Nothing }
 
 
 
 newtype DescribeJobQueuesRequest = DescribeJobQueuesRequest 
-  { "jobQueues" :: NullOrUndefined (StringList)
-  , "maxResults" :: NullOrUndefined (Int)
-  , "nextToken" :: NullOrUndefined (String)
+  { "jobQueues" :: Maybe (StringList)
+  , "maxResults" :: Maybe (Int)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeJobQueuesRequest :: Newtype DescribeJobQueuesRequest _
 derive instance repGenericDescribeJobQueuesRequest :: Generic DescribeJobQueuesRequest _
@@ -764,18 +763,18 @@ instance encodeDescribeJobQueuesRequest :: Encode DescribeJobQueuesRequest where
 
 -- | Constructs DescribeJobQueuesRequest from required parameters
 newDescribeJobQueuesRequest :: DescribeJobQueuesRequest
-newDescribeJobQueuesRequest  = DescribeJobQueuesRequest { "jobQueues": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeJobQueuesRequest  = DescribeJobQueuesRequest { "jobQueues": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeJobQueuesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobQueuesRequest' :: ( { "jobQueues" :: NullOrUndefined (StringList) , "maxResults" :: NullOrUndefined (Int) , "nextToken" :: NullOrUndefined (String) } -> {"jobQueues" :: NullOrUndefined (StringList) , "maxResults" :: NullOrUndefined (Int) , "nextToken" :: NullOrUndefined (String) } ) -> DescribeJobQueuesRequest
-newDescribeJobQueuesRequest'  customize = (DescribeJobQueuesRequest <<< customize) { "jobQueues": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeJobQueuesRequest' :: ( { "jobQueues" :: Maybe (StringList) , "maxResults" :: Maybe (Int) , "nextToken" :: Maybe (String) } -> {"jobQueues" :: Maybe (StringList) , "maxResults" :: Maybe (Int) , "nextToken" :: Maybe (String) } ) -> DescribeJobQueuesRequest
+newDescribeJobQueuesRequest'  customize = (DescribeJobQueuesRequest <<< customize) { "jobQueues": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 newtype DescribeJobQueuesResponse = DescribeJobQueuesResponse 
-  { "jobQueues" :: NullOrUndefined (JobQueueDetailList)
-  , "nextToken" :: NullOrUndefined (String)
+  { "jobQueues" :: Maybe (JobQueueDetailList)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeJobQueuesResponse :: Newtype DescribeJobQueuesResponse _
 derive instance repGenericDescribeJobQueuesResponse :: Generic DescribeJobQueuesResponse _
@@ -785,12 +784,12 @@ instance encodeDescribeJobQueuesResponse :: Encode DescribeJobQueuesResponse whe
 
 -- | Constructs DescribeJobQueuesResponse from required parameters
 newDescribeJobQueuesResponse :: DescribeJobQueuesResponse
-newDescribeJobQueuesResponse  = DescribeJobQueuesResponse { "jobQueues": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeJobQueuesResponse  = DescribeJobQueuesResponse { "jobQueues": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeJobQueuesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobQueuesResponse' :: ( { "jobQueues" :: NullOrUndefined (JobQueueDetailList) , "nextToken" :: NullOrUndefined (String) } -> {"jobQueues" :: NullOrUndefined (JobQueueDetailList) , "nextToken" :: NullOrUndefined (String) } ) -> DescribeJobQueuesResponse
-newDescribeJobQueuesResponse'  customize = (DescribeJobQueuesResponse <<< customize) { "jobQueues": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeJobQueuesResponse' :: ( { "jobQueues" :: Maybe (JobQueueDetailList) , "nextToken" :: Maybe (String) } -> {"jobQueues" :: Maybe (JobQueueDetailList) , "nextToken" :: Maybe (String) } ) -> DescribeJobQueuesResponse
+newDescribeJobQueuesResponse'  customize = (DescribeJobQueuesResponse <<< customize) { "jobQueues": Nothing, "nextToken": Nothing }
 
 
 
@@ -815,7 +814,7 @@ newDescribeJobsRequest' _jobs customize = (DescribeJobsRequest <<< customize) { 
 
 
 newtype DescribeJobsResponse = DescribeJobsResponse 
-  { "jobs" :: NullOrUndefined (JobDetailList)
+  { "jobs" :: Maybe (JobDetailList)
   }
 derive instance newtypeDescribeJobsResponse :: Newtype DescribeJobsResponse _
 derive instance repGenericDescribeJobsResponse :: Generic DescribeJobsResponse _
@@ -825,12 +824,12 @@ instance encodeDescribeJobsResponse :: Encode DescribeJobsResponse where encode 
 
 -- | Constructs DescribeJobsResponse from required parameters
 newDescribeJobsResponse :: DescribeJobsResponse
-newDescribeJobsResponse  = DescribeJobsResponse { "jobs": (NullOrUndefined Nothing) }
+newDescribeJobsResponse  = DescribeJobsResponse { "jobs": Nothing }
 
 -- | Constructs DescribeJobsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobsResponse' :: ( { "jobs" :: NullOrUndefined (JobDetailList) } -> {"jobs" :: NullOrUndefined (JobDetailList) } ) -> DescribeJobsResponse
-newDescribeJobsResponse'  customize = (DescribeJobsResponse <<< customize) { "jobs": (NullOrUndefined Nothing) }
+newDescribeJobsResponse' :: ( { "jobs" :: Maybe (JobDetailList) } -> {"jobs" :: Maybe (JobDetailList) } ) -> DescribeJobsResponse
+newDescribeJobsResponse'  customize = (DescribeJobsResponse <<< customize) { "jobs": Nothing }
 
 
 
@@ -845,7 +844,7 @@ instance encodeEnvironmentVariables :: Encode EnvironmentVariables where encode 
 
 -- | <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.</p>
 newtype Host = Host 
-  { "sourcePath" :: NullOrUndefined (String)
+  { "sourcePath" :: Maybe (String)
   }
 derive instance newtypeHost :: Newtype Host _
 derive instance repGenericHost :: Generic Host _
@@ -855,12 +854,12 @@ instance encodeHost :: Encode Host where encode = genericEncode options
 
 -- | Constructs Host from required parameters
 newHost :: Host
-newHost  = Host { "sourcePath": (NullOrUndefined Nothing) }
+newHost  = Host { "sourcePath": Nothing }
 
 -- | Constructs Host's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHost' :: ( { "sourcePath" :: NullOrUndefined (String) } -> {"sourcePath" :: NullOrUndefined (String) } ) -> Host
-newHost'  customize = (Host <<< customize) { "sourcePath": (NullOrUndefined Nothing) }
+newHost' :: ( { "sourcePath" :: Maybe (String) } -> {"sourcePath" :: Maybe (String) } ) -> Host
+newHost'  customize = (Host <<< customize) { "sourcePath": Nothing }
 
 
 
@@ -887,11 +886,11 @@ newtype JobDefinition = JobDefinition
   { "jobDefinitionName" :: (String)
   , "jobDefinitionArn" :: (String)
   , "revision" :: (Int)
-  , "status" :: NullOrUndefined (String)
+  , "status" :: Maybe (String)
   , "type" :: (String)
-  , "parameters" :: NullOrUndefined (ParametersMap)
-  , "retryStrategy" :: NullOrUndefined (RetryStrategy)
-  , "containerProperties" :: NullOrUndefined (ContainerProperties)
+  , "parameters" :: Maybe (ParametersMap)
+  , "retryStrategy" :: Maybe (RetryStrategy)
+  , "containerProperties" :: Maybe (ContainerProperties)
   }
 derive instance newtypeJobDefinition :: Newtype JobDefinition _
 derive instance repGenericJobDefinition :: Generic JobDefinition _
@@ -901,12 +900,12 @@ instance encodeJobDefinition :: Encode JobDefinition where encode = genericEncod
 
 -- | Constructs JobDefinition from required parameters
 newJobDefinition :: String -> String -> Int -> String -> JobDefinition
-newJobDefinition _jobDefinitionArn _jobDefinitionName _revision _type = JobDefinition { "jobDefinitionArn": _jobDefinitionArn, "jobDefinitionName": _jobDefinitionName, "revision": _revision, "type": _type, "containerProperties": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newJobDefinition _jobDefinitionArn _jobDefinitionName _revision _type = JobDefinition { "jobDefinitionArn": _jobDefinitionArn, "jobDefinitionName": _jobDefinitionName, "revision": _revision, "type": _type, "containerProperties": Nothing, "parameters": Nothing, "retryStrategy": Nothing, "status": Nothing }
 
 -- | Constructs JobDefinition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobDefinition' :: String -> String -> Int -> String -> ( { "jobDefinitionName" :: (String) , "jobDefinitionArn" :: (String) , "revision" :: (Int) , "status" :: NullOrUndefined (String) , "type" :: (String) , "parameters" :: NullOrUndefined (ParametersMap) , "retryStrategy" :: NullOrUndefined (RetryStrategy) , "containerProperties" :: NullOrUndefined (ContainerProperties) } -> {"jobDefinitionName" :: (String) , "jobDefinitionArn" :: (String) , "revision" :: (Int) , "status" :: NullOrUndefined (String) , "type" :: (String) , "parameters" :: NullOrUndefined (ParametersMap) , "retryStrategy" :: NullOrUndefined (RetryStrategy) , "containerProperties" :: NullOrUndefined (ContainerProperties) } ) -> JobDefinition
-newJobDefinition' _jobDefinitionArn _jobDefinitionName _revision _type customize = (JobDefinition <<< customize) { "jobDefinitionArn": _jobDefinitionArn, "jobDefinitionName": _jobDefinitionName, "revision": _revision, "type": _type, "containerProperties": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing) }
+newJobDefinition' :: String -> String -> Int -> String -> ( { "jobDefinitionName" :: (String) , "jobDefinitionArn" :: (String) , "revision" :: (Int) , "status" :: Maybe (String) , "type" :: (String) , "parameters" :: Maybe (ParametersMap) , "retryStrategy" :: Maybe (RetryStrategy) , "containerProperties" :: Maybe (ContainerProperties) } -> {"jobDefinitionName" :: (String) , "jobDefinitionArn" :: (String) , "revision" :: (Int) , "status" :: Maybe (String) , "type" :: (String) , "parameters" :: Maybe (ParametersMap) , "retryStrategy" :: Maybe (RetryStrategy) , "containerProperties" :: Maybe (ContainerProperties) } ) -> JobDefinition
+newJobDefinition' _jobDefinitionArn _jobDefinitionName _revision _type customize = (JobDefinition <<< customize) { "jobDefinitionArn": _jobDefinitionArn, "jobDefinitionName": _jobDefinitionName, "revision": _revision, "type": _type, "containerProperties": Nothing, "parameters": Nothing, "retryStrategy": Nothing, "status": Nothing }
 
 
 
@@ -930,8 +929,8 @@ instance encodeJobDefinitionType :: Encode JobDefinitionType where encode = gene
 
 -- | <p>An object representing an AWS Batch job dependency.</p>
 newtype JobDependency = JobDependency 
-  { "jobId" :: NullOrUndefined (String)
-  , "type" :: NullOrUndefined (ArrayJobDependency)
+  { "jobId" :: Maybe (String)
+  , "type" :: Maybe (ArrayJobDependency)
   }
 derive instance newtypeJobDependency :: Newtype JobDependency _
 derive instance repGenericJobDependency :: Generic JobDependency _
@@ -941,12 +940,12 @@ instance encodeJobDependency :: Encode JobDependency where encode = genericEncod
 
 -- | Constructs JobDependency from required parameters
 newJobDependency :: JobDependency
-newJobDependency  = JobDependency { "jobId": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newJobDependency  = JobDependency { "jobId": Nothing, "type": Nothing }
 
 -- | Constructs JobDependency's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobDependency' :: ( { "jobId" :: NullOrUndefined (String) , "type" :: NullOrUndefined (ArrayJobDependency) } -> {"jobId" :: NullOrUndefined (String) , "type" :: NullOrUndefined (ArrayJobDependency) } ) -> JobDependency
-newJobDependency'  customize = (JobDependency <<< customize) { "jobId": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newJobDependency' :: ( { "jobId" :: Maybe (String) , "type" :: Maybe (ArrayJobDependency) } -> {"jobId" :: Maybe (String) , "type" :: Maybe (ArrayJobDependency) } ) -> JobDependency
+newJobDependency'  customize = (JobDependency <<< customize) { "jobId": Nothing, "type": Nothing }
 
 
 
@@ -965,17 +964,17 @@ newtype JobDetail = JobDetail
   , "jobId" :: (String)
   , "jobQueue" :: (String)
   , "status" :: (JobStatus)
-  , "attempts" :: NullOrUndefined (AttemptDetails)
-  , "statusReason" :: NullOrUndefined (String)
-  , "createdAt" :: NullOrUndefined (Number)
-  , "retryStrategy" :: NullOrUndefined (RetryStrategy)
+  , "attempts" :: Maybe (AttemptDetails)
+  , "statusReason" :: Maybe (String)
+  , "createdAt" :: Maybe (Number)
+  , "retryStrategy" :: Maybe (RetryStrategy)
   , "startedAt" :: (Number)
-  , "stoppedAt" :: NullOrUndefined (Number)
-  , "dependsOn" :: NullOrUndefined (JobDependencyList)
+  , "stoppedAt" :: Maybe (Number)
+  , "dependsOn" :: Maybe (JobDependencyList)
   , "jobDefinition" :: (String)
-  , "parameters" :: NullOrUndefined (ParametersMap)
-  , "container" :: NullOrUndefined (ContainerDetail)
-  , "arrayProperties" :: NullOrUndefined (ArrayPropertiesDetail)
+  , "parameters" :: Maybe (ParametersMap)
+  , "container" :: Maybe (ContainerDetail)
+  , "arrayProperties" :: Maybe (ArrayPropertiesDetail)
   }
 derive instance newtypeJobDetail :: Newtype JobDetail _
 derive instance repGenericJobDetail :: Generic JobDetail _
@@ -985,12 +984,12 @@ instance encodeJobDetail :: Encode JobDetail where encode = genericEncode option
 
 -- | Constructs JobDetail from required parameters
 newJobDetail :: String -> String -> String -> String -> Number -> JobStatus -> JobDetail
-newJobDetail _jobDefinition _jobId _jobName _jobQueue _startedAt _status = JobDetail { "jobDefinition": _jobDefinition, "jobId": _jobId, "jobName": _jobName, "jobQueue": _jobQueue, "startedAt": _startedAt, "status": _status, "arrayProperties": (NullOrUndefined Nothing), "attempts": (NullOrUndefined Nothing), "container": (NullOrUndefined Nothing), "createdAt": (NullOrUndefined Nothing), "dependsOn": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "stoppedAt": (NullOrUndefined Nothing) }
+newJobDetail _jobDefinition _jobId _jobName _jobQueue _startedAt _status = JobDetail { "jobDefinition": _jobDefinition, "jobId": _jobId, "jobName": _jobName, "jobQueue": _jobQueue, "startedAt": _startedAt, "status": _status, "arrayProperties": Nothing, "attempts": Nothing, "container": Nothing, "createdAt": Nothing, "dependsOn": Nothing, "parameters": Nothing, "retryStrategy": Nothing, "statusReason": Nothing, "stoppedAt": Nothing }
 
 -- | Constructs JobDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobDetail' :: String -> String -> String -> String -> Number -> JobStatus -> ( { "jobName" :: (String) , "jobId" :: (String) , "jobQueue" :: (String) , "status" :: (JobStatus) , "attempts" :: NullOrUndefined (AttemptDetails) , "statusReason" :: NullOrUndefined (String) , "createdAt" :: NullOrUndefined (Number) , "retryStrategy" :: NullOrUndefined (RetryStrategy) , "startedAt" :: (Number) , "stoppedAt" :: NullOrUndefined (Number) , "dependsOn" :: NullOrUndefined (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: NullOrUndefined (ParametersMap) , "container" :: NullOrUndefined (ContainerDetail) , "arrayProperties" :: NullOrUndefined (ArrayPropertiesDetail) } -> {"jobName" :: (String) , "jobId" :: (String) , "jobQueue" :: (String) , "status" :: (JobStatus) , "attempts" :: NullOrUndefined (AttemptDetails) , "statusReason" :: NullOrUndefined (String) , "createdAt" :: NullOrUndefined (Number) , "retryStrategy" :: NullOrUndefined (RetryStrategy) , "startedAt" :: (Number) , "stoppedAt" :: NullOrUndefined (Number) , "dependsOn" :: NullOrUndefined (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: NullOrUndefined (ParametersMap) , "container" :: NullOrUndefined (ContainerDetail) , "arrayProperties" :: NullOrUndefined (ArrayPropertiesDetail) } ) -> JobDetail
-newJobDetail' _jobDefinition _jobId _jobName _jobQueue _startedAt _status customize = (JobDetail <<< customize) { "jobDefinition": _jobDefinition, "jobId": _jobId, "jobName": _jobName, "jobQueue": _jobQueue, "startedAt": _startedAt, "status": _status, "arrayProperties": (NullOrUndefined Nothing), "attempts": (NullOrUndefined Nothing), "container": (NullOrUndefined Nothing), "createdAt": (NullOrUndefined Nothing), "dependsOn": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "stoppedAt": (NullOrUndefined Nothing) }
+newJobDetail' :: String -> String -> String -> String -> Number -> JobStatus -> ( { "jobName" :: (String) , "jobId" :: (String) , "jobQueue" :: (String) , "status" :: (JobStatus) , "attempts" :: Maybe (AttemptDetails) , "statusReason" :: Maybe (String) , "createdAt" :: Maybe (Number) , "retryStrategy" :: Maybe (RetryStrategy) , "startedAt" :: (Number) , "stoppedAt" :: Maybe (Number) , "dependsOn" :: Maybe (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: Maybe (ParametersMap) , "container" :: Maybe (ContainerDetail) , "arrayProperties" :: Maybe (ArrayPropertiesDetail) } -> {"jobName" :: (String) , "jobId" :: (String) , "jobQueue" :: (String) , "status" :: (JobStatus) , "attempts" :: Maybe (AttemptDetails) , "statusReason" :: Maybe (String) , "createdAt" :: Maybe (Number) , "retryStrategy" :: Maybe (RetryStrategy) , "startedAt" :: (Number) , "stoppedAt" :: Maybe (Number) , "dependsOn" :: Maybe (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: Maybe (ParametersMap) , "container" :: Maybe (ContainerDetail) , "arrayProperties" :: Maybe (ArrayPropertiesDetail) } ) -> JobDetail
+newJobDetail' _jobDefinition _jobId _jobName _jobQueue _startedAt _status customize = (JobDetail <<< customize) { "jobDefinition": _jobDefinition, "jobId": _jobId, "jobName": _jobName, "jobQueue": _jobQueue, "startedAt": _startedAt, "status": _status, "arrayProperties": Nothing, "attempts": Nothing, "container": Nothing, "createdAt": Nothing, "dependsOn": Nothing, "parameters": Nothing, "retryStrategy": Nothing, "statusReason": Nothing, "stoppedAt": Nothing }
 
 
 
@@ -1008,8 +1007,8 @@ newtype JobQueueDetail = JobQueueDetail
   { "jobQueueName" :: (String)
   , "jobQueueArn" :: (String)
   , "state" :: (JQState)
-  , "status" :: NullOrUndefined (JQStatus)
-  , "statusReason" :: NullOrUndefined (String)
+  , "status" :: Maybe (JQStatus)
+  , "statusReason" :: Maybe (String)
   , "priority" :: (Int)
   , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders)
   }
@@ -1021,12 +1020,12 @@ instance encodeJobQueueDetail :: Encode JobQueueDetail where encode = genericEnc
 
 -- | Constructs JobQueueDetail from required parameters
 newJobQueueDetail :: ComputeEnvironmentOrders -> String -> String -> Int -> JQState -> JobQueueDetail
-newJobQueueDetail _computeEnvironmentOrder _jobQueueArn _jobQueueName _priority _state = JobQueueDetail { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueArn": _jobQueueArn, "jobQueueName": _jobQueueName, "priority": _priority, "state": _state, "status": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing) }
+newJobQueueDetail _computeEnvironmentOrder _jobQueueArn _jobQueueName _priority _state = JobQueueDetail { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueArn": _jobQueueArn, "jobQueueName": _jobQueueName, "priority": _priority, "state": _state, "status": Nothing, "statusReason": Nothing }
 
 -- | Constructs JobQueueDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobQueueDetail' :: ComputeEnvironmentOrders -> String -> String -> Int -> JQState -> ( { "jobQueueName" :: (String) , "jobQueueArn" :: (String) , "state" :: (JQState) , "status" :: NullOrUndefined (JQStatus) , "statusReason" :: NullOrUndefined (String) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } -> {"jobQueueName" :: (String) , "jobQueueArn" :: (String) , "state" :: (JQState) , "status" :: NullOrUndefined (JQStatus) , "statusReason" :: NullOrUndefined (String) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } ) -> JobQueueDetail
-newJobQueueDetail' _computeEnvironmentOrder _jobQueueArn _jobQueueName _priority _state customize = (JobQueueDetail <<< customize) { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueArn": _jobQueueArn, "jobQueueName": _jobQueueName, "priority": _priority, "state": _state, "status": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing) }
+newJobQueueDetail' :: ComputeEnvironmentOrders -> String -> String -> Int -> JQState -> ( { "jobQueueName" :: (String) , "jobQueueArn" :: (String) , "state" :: (JQState) , "status" :: Maybe (JQStatus) , "statusReason" :: Maybe (String) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } -> {"jobQueueName" :: (String) , "jobQueueArn" :: (String) , "state" :: (JQState) , "status" :: Maybe (JQStatus) , "statusReason" :: Maybe (String) , "priority" :: (Int) , "computeEnvironmentOrder" :: (ComputeEnvironmentOrders) } ) -> JobQueueDetail
+newJobQueueDetail' _computeEnvironmentOrder _jobQueueArn _jobQueueName _priority _state customize = (JobQueueDetail <<< customize) { "computeEnvironmentOrder": _computeEnvironmentOrder, "jobQueueArn": _jobQueueArn, "jobQueueName": _jobQueueName, "priority": _priority, "state": _state, "status": Nothing, "statusReason": Nothing }
 
 
 
@@ -1052,13 +1051,13 @@ instance encodeJobStatus :: Encode JobStatus where encode = genericEncode option
 newtype JobSummary = JobSummary 
   { "jobId" :: (String)
   , "jobName" :: (String)
-  , "createdAt" :: NullOrUndefined (Number)
-  , "status" :: NullOrUndefined (JobStatus)
-  , "statusReason" :: NullOrUndefined (String)
-  , "startedAt" :: NullOrUndefined (Number)
-  , "stoppedAt" :: NullOrUndefined (Number)
-  , "container" :: NullOrUndefined (ContainerSummary)
-  , "arrayProperties" :: NullOrUndefined (ArrayPropertiesSummary)
+  , "createdAt" :: Maybe (Number)
+  , "status" :: Maybe (JobStatus)
+  , "statusReason" :: Maybe (String)
+  , "startedAt" :: Maybe (Number)
+  , "stoppedAt" :: Maybe (Number)
+  , "container" :: Maybe (ContainerSummary)
+  , "arrayProperties" :: Maybe (ArrayPropertiesSummary)
   }
 derive instance newtypeJobSummary :: Newtype JobSummary _
 derive instance repGenericJobSummary :: Generic JobSummary _
@@ -1068,12 +1067,12 @@ instance encodeJobSummary :: Encode JobSummary where encode = genericEncode opti
 
 -- | Constructs JobSummary from required parameters
 newJobSummary :: String -> String -> JobSummary
-newJobSummary _jobId _jobName = JobSummary { "jobId": _jobId, "jobName": _jobName, "arrayProperties": (NullOrUndefined Nothing), "container": (NullOrUndefined Nothing), "createdAt": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "stoppedAt": (NullOrUndefined Nothing) }
+newJobSummary _jobId _jobName = JobSummary { "jobId": _jobId, "jobName": _jobName, "arrayProperties": Nothing, "container": Nothing, "createdAt": Nothing, "startedAt": Nothing, "status": Nothing, "statusReason": Nothing, "stoppedAt": Nothing }
 
 -- | Constructs JobSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobSummary' :: String -> String -> ( { "jobId" :: (String) , "jobName" :: (String) , "createdAt" :: NullOrUndefined (Number) , "status" :: NullOrUndefined (JobStatus) , "statusReason" :: NullOrUndefined (String) , "startedAt" :: NullOrUndefined (Number) , "stoppedAt" :: NullOrUndefined (Number) , "container" :: NullOrUndefined (ContainerSummary) , "arrayProperties" :: NullOrUndefined (ArrayPropertiesSummary) } -> {"jobId" :: (String) , "jobName" :: (String) , "createdAt" :: NullOrUndefined (Number) , "status" :: NullOrUndefined (JobStatus) , "statusReason" :: NullOrUndefined (String) , "startedAt" :: NullOrUndefined (Number) , "stoppedAt" :: NullOrUndefined (Number) , "container" :: NullOrUndefined (ContainerSummary) , "arrayProperties" :: NullOrUndefined (ArrayPropertiesSummary) } ) -> JobSummary
-newJobSummary' _jobId _jobName customize = (JobSummary <<< customize) { "jobId": _jobId, "jobName": _jobName, "arrayProperties": (NullOrUndefined Nothing), "container": (NullOrUndefined Nothing), "createdAt": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "statusReason": (NullOrUndefined Nothing), "stoppedAt": (NullOrUndefined Nothing) }
+newJobSummary' :: String -> String -> ( { "jobId" :: (String) , "jobName" :: (String) , "createdAt" :: Maybe (Number) , "status" :: Maybe (JobStatus) , "statusReason" :: Maybe (String) , "startedAt" :: Maybe (Number) , "stoppedAt" :: Maybe (Number) , "container" :: Maybe (ContainerSummary) , "arrayProperties" :: Maybe (ArrayPropertiesSummary) } -> {"jobId" :: (String) , "jobName" :: (String) , "createdAt" :: Maybe (Number) , "status" :: Maybe (JobStatus) , "statusReason" :: Maybe (String) , "startedAt" :: Maybe (Number) , "stoppedAt" :: Maybe (Number) , "container" :: Maybe (ContainerSummary) , "arrayProperties" :: Maybe (ArrayPropertiesSummary) } ) -> JobSummary
+newJobSummary' _jobId _jobName customize = (JobSummary <<< customize) { "jobId": _jobId, "jobName": _jobName, "arrayProperties": Nothing, "container": Nothing, "createdAt": Nothing, "startedAt": Nothing, "status": Nothing, "statusReason": Nothing, "stoppedAt": Nothing }
 
 
 
@@ -1088,8 +1087,8 @@ instance encodeJobSummaryList :: Encode JobSummaryList where encode = genericEnc
 
 -- | <p>A key-value pair object.</p>
 newtype KeyValuePair = KeyValuePair 
-  { "name" :: NullOrUndefined (String)
-  , "value" :: NullOrUndefined (String)
+  { "name" :: Maybe (String)
+  , "value" :: Maybe (String)
   }
 derive instance newtypeKeyValuePair :: Newtype KeyValuePair _
 derive instance repGenericKeyValuePair :: Generic KeyValuePair _
@@ -1099,21 +1098,21 @@ instance encodeKeyValuePair :: Encode KeyValuePair where encode = genericEncode 
 
 -- | Constructs KeyValuePair from required parameters
 newKeyValuePair :: KeyValuePair
-newKeyValuePair  = KeyValuePair { "name": (NullOrUndefined Nothing), "value": (NullOrUndefined Nothing) }
+newKeyValuePair  = KeyValuePair { "name": Nothing, "value": Nothing }
 
 -- | Constructs KeyValuePair's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKeyValuePair' :: ( { "name" :: NullOrUndefined (String) , "value" :: NullOrUndefined (String) } -> {"name" :: NullOrUndefined (String) , "value" :: NullOrUndefined (String) } ) -> KeyValuePair
-newKeyValuePair'  customize = (KeyValuePair <<< customize) { "name": (NullOrUndefined Nothing), "value": (NullOrUndefined Nothing) }
+newKeyValuePair' :: ( { "name" :: Maybe (String) , "value" :: Maybe (String) } -> {"name" :: Maybe (String) , "value" :: Maybe (String) } ) -> KeyValuePair
+newKeyValuePair'  customize = (KeyValuePair <<< customize) { "name": Nothing, "value": Nothing }
 
 
 
 newtype ListJobsRequest = ListJobsRequest 
-  { "jobQueue" :: NullOrUndefined (String)
-  , "arrayJobId" :: NullOrUndefined (String)
-  , "jobStatus" :: NullOrUndefined (JobStatus)
-  , "maxResults" :: NullOrUndefined (Int)
-  , "nextToken" :: NullOrUndefined (String)
+  { "jobQueue" :: Maybe (String)
+  , "arrayJobId" :: Maybe (String)
+  , "jobStatus" :: Maybe (JobStatus)
+  , "maxResults" :: Maybe (Int)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeListJobsRequest :: Newtype ListJobsRequest _
 derive instance repGenericListJobsRequest :: Generic ListJobsRequest _
@@ -1123,18 +1122,18 @@ instance encodeListJobsRequest :: Encode ListJobsRequest where encode = genericE
 
 -- | Constructs ListJobsRequest from required parameters
 newListJobsRequest :: ListJobsRequest
-newListJobsRequest  = ListJobsRequest { "arrayJobId": (NullOrUndefined Nothing), "jobQueue": (NullOrUndefined Nothing), "jobStatus": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListJobsRequest  = ListJobsRequest { "arrayJobId": Nothing, "jobQueue": Nothing, "jobStatus": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListJobsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListJobsRequest' :: ( { "jobQueue" :: NullOrUndefined (String) , "arrayJobId" :: NullOrUndefined (String) , "jobStatus" :: NullOrUndefined (JobStatus) , "maxResults" :: NullOrUndefined (Int) , "nextToken" :: NullOrUndefined (String) } -> {"jobQueue" :: NullOrUndefined (String) , "arrayJobId" :: NullOrUndefined (String) , "jobStatus" :: NullOrUndefined (JobStatus) , "maxResults" :: NullOrUndefined (Int) , "nextToken" :: NullOrUndefined (String) } ) -> ListJobsRequest
-newListJobsRequest'  customize = (ListJobsRequest <<< customize) { "arrayJobId": (NullOrUndefined Nothing), "jobQueue": (NullOrUndefined Nothing), "jobStatus": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListJobsRequest' :: ( { "jobQueue" :: Maybe (String) , "arrayJobId" :: Maybe (String) , "jobStatus" :: Maybe (JobStatus) , "maxResults" :: Maybe (Int) , "nextToken" :: Maybe (String) } -> {"jobQueue" :: Maybe (String) , "arrayJobId" :: Maybe (String) , "jobStatus" :: Maybe (JobStatus) , "maxResults" :: Maybe (Int) , "nextToken" :: Maybe (String) } ) -> ListJobsRequest
+newListJobsRequest'  customize = (ListJobsRequest <<< customize) { "arrayJobId": Nothing, "jobQueue": Nothing, "jobStatus": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 newtype ListJobsResponse = ListJobsResponse 
   { "jobSummaryList" :: (JobSummaryList)
-  , "nextToken" :: NullOrUndefined (String)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeListJobsResponse :: Newtype ListJobsResponse _
 derive instance repGenericListJobsResponse :: Generic ListJobsResponse _
@@ -1144,20 +1143,20 @@ instance encodeListJobsResponse :: Encode ListJobsResponse where encode = generi
 
 -- | Constructs ListJobsResponse from required parameters
 newListJobsResponse :: JobSummaryList -> ListJobsResponse
-newListJobsResponse _jobSummaryList = ListJobsResponse { "jobSummaryList": _jobSummaryList, "nextToken": (NullOrUndefined Nothing) }
+newListJobsResponse _jobSummaryList = ListJobsResponse { "jobSummaryList": _jobSummaryList, "nextToken": Nothing }
 
 -- | Constructs ListJobsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListJobsResponse' :: JobSummaryList -> ( { "jobSummaryList" :: (JobSummaryList) , "nextToken" :: NullOrUndefined (String) } -> {"jobSummaryList" :: (JobSummaryList) , "nextToken" :: NullOrUndefined (String) } ) -> ListJobsResponse
-newListJobsResponse' _jobSummaryList customize = (ListJobsResponse <<< customize) { "jobSummaryList": _jobSummaryList, "nextToken": (NullOrUndefined Nothing) }
+newListJobsResponse' :: JobSummaryList -> ( { "jobSummaryList" :: (JobSummaryList) , "nextToken" :: Maybe (String) } -> {"jobSummaryList" :: (JobSummaryList) , "nextToken" :: Maybe (String) } ) -> ListJobsResponse
+newListJobsResponse' _jobSummaryList customize = (ListJobsResponse <<< customize) { "jobSummaryList": _jobSummaryList, "nextToken": Nothing }
 
 
 
 -- | <p>Details on a Docker volume mount point that is used in a job's container properties.</p>
 newtype MountPoint = MountPoint 
-  { "containerPath" :: NullOrUndefined (String)
-  , "readOnly" :: NullOrUndefined (Boolean)
-  , "sourceVolume" :: NullOrUndefined (String)
+  { "containerPath" :: Maybe (String)
+  , "readOnly" :: Maybe (Boolean)
+  , "sourceVolume" :: Maybe (String)
   }
 derive instance newtypeMountPoint :: Newtype MountPoint _
 derive instance repGenericMountPoint :: Generic MountPoint _
@@ -1167,12 +1166,12 @@ instance encodeMountPoint :: Encode MountPoint where encode = genericEncode opti
 
 -- | Constructs MountPoint from required parameters
 newMountPoint :: MountPoint
-newMountPoint  = MountPoint { "containerPath": (NullOrUndefined Nothing), "readOnly": (NullOrUndefined Nothing), "sourceVolume": (NullOrUndefined Nothing) }
+newMountPoint  = MountPoint { "containerPath": Nothing, "readOnly": Nothing, "sourceVolume": Nothing }
 
 -- | Constructs MountPoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMountPoint' :: ( { "containerPath" :: NullOrUndefined (String) , "readOnly" :: NullOrUndefined (Boolean) , "sourceVolume" :: NullOrUndefined (String) } -> {"containerPath" :: NullOrUndefined (String) , "readOnly" :: NullOrUndefined (Boolean) , "sourceVolume" :: NullOrUndefined (String) } ) -> MountPoint
-newMountPoint'  customize = (MountPoint <<< customize) { "containerPath": (NullOrUndefined Nothing), "readOnly": (NullOrUndefined Nothing), "sourceVolume": (NullOrUndefined Nothing) }
+newMountPoint' :: ( { "containerPath" :: Maybe (String) , "readOnly" :: Maybe (Boolean) , "sourceVolume" :: Maybe (String) } -> {"containerPath" :: Maybe (String) , "readOnly" :: Maybe (Boolean) , "sourceVolume" :: Maybe (String) } ) -> MountPoint
+newMountPoint'  customize = (MountPoint <<< customize) { "containerPath": Nothing, "readOnly": Nothing, "sourceVolume": Nothing }
 
 
 
@@ -1197,9 +1196,9 @@ instance encodeParametersMap :: Encode ParametersMap where encode = genericEncod
 newtype RegisterJobDefinitionRequest = RegisterJobDefinitionRequest 
   { "jobDefinitionName" :: (String)
   , "type" :: (JobDefinitionType)
-  , "parameters" :: NullOrUndefined (ParametersMap)
-  , "containerProperties" :: NullOrUndefined (ContainerProperties)
-  , "retryStrategy" :: NullOrUndefined (RetryStrategy)
+  , "parameters" :: Maybe (ParametersMap)
+  , "containerProperties" :: Maybe (ContainerProperties)
+  , "retryStrategy" :: Maybe (RetryStrategy)
   }
 derive instance newtypeRegisterJobDefinitionRequest :: Newtype RegisterJobDefinitionRequest _
 derive instance repGenericRegisterJobDefinitionRequest :: Generic RegisterJobDefinitionRequest _
@@ -1209,12 +1208,12 @@ instance encodeRegisterJobDefinitionRequest :: Encode RegisterJobDefinitionReque
 
 -- | Constructs RegisterJobDefinitionRequest from required parameters
 newRegisterJobDefinitionRequest :: String -> JobDefinitionType -> RegisterJobDefinitionRequest
-newRegisterJobDefinitionRequest _jobDefinitionName _type = RegisterJobDefinitionRequest { "jobDefinitionName": _jobDefinitionName, "type": _type, "containerProperties": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing) }
+newRegisterJobDefinitionRequest _jobDefinitionName _type = RegisterJobDefinitionRequest { "jobDefinitionName": _jobDefinitionName, "type": _type, "containerProperties": Nothing, "parameters": Nothing, "retryStrategy": Nothing }
 
 -- | Constructs RegisterJobDefinitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterJobDefinitionRequest' :: String -> JobDefinitionType -> ( { "jobDefinitionName" :: (String) , "type" :: (JobDefinitionType) , "parameters" :: NullOrUndefined (ParametersMap) , "containerProperties" :: NullOrUndefined (ContainerProperties) , "retryStrategy" :: NullOrUndefined (RetryStrategy) } -> {"jobDefinitionName" :: (String) , "type" :: (JobDefinitionType) , "parameters" :: NullOrUndefined (ParametersMap) , "containerProperties" :: NullOrUndefined (ContainerProperties) , "retryStrategy" :: NullOrUndefined (RetryStrategy) } ) -> RegisterJobDefinitionRequest
-newRegisterJobDefinitionRequest' _jobDefinitionName _type customize = (RegisterJobDefinitionRequest <<< customize) { "jobDefinitionName": _jobDefinitionName, "type": _type, "containerProperties": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing) }
+newRegisterJobDefinitionRequest' :: String -> JobDefinitionType -> ( { "jobDefinitionName" :: (String) , "type" :: (JobDefinitionType) , "parameters" :: Maybe (ParametersMap) , "containerProperties" :: Maybe (ContainerProperties) , "retryStrategy" :: Maybe (RetryStrategy) } -> {"jobDefinitionName" :: (String) , "type" :: (JobDefinitionType) , "parameters" :: Maybe (ParametersMap) , "containerProperties" :: Maybe (ContainerProperties) , "retryStrategy" :: Maybe (RetryStrategy) } ) -> RegisterJobDefinitionRequest
+newRegisterJobDefinitionRequest' _jobDefinitionName _type customize = (RegisterJobDefinitionRequest <<< customize) { "jobDefinitionName": _jobDefinitionName, "type": _type, "containerProperties": Nothing, "parameters": Nothing, "retryStrategy": Nothing }
 
 
 
@@ -1242,7 +1241,7 @@ newRegisterJobDefinitionResponse' _jobDefinitionArn _jobDefinitionName _revision
 
 -- | <p>The retry strategy associated with a job.</p>
 newtype RetryStrategy = RetryStrategy 
-  { "attempts" :: NullOrUndefined (Int)
+  { "attempts" :: Maybe (Int)
   }
 derive instance newtypeRetryStrategy :: Newtype RetryStrategy _
 derive instance repGenericRetryStrategy :: Generic RetryStrategy _
@@ -1252,18 +1251,18 @@ instance encodeRetryStrategy :: Encode RetryStrategy where encode = genericEncod
 
 -- | Constructs RetryStrategy from required parameters
 newRetryStrategy :: RetryStrategy
-newRetryStrategy  = RetryStrategy { "attempts": (NullOrUndefined Nothing) }
+newRetryStrategy  = RetryStrategy { "attempts": Nothing }
 
 -- | Constructs RetryStrategy's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRetryStrategy' :: ( { "attempts" :: NullOrUndefined (Int) } -> {"attempts" :: NullOrUndefined (Int) } ) -> RetryStrategy
-newRetryStrategy'  customize = (RetryStrategy <<< customize) { "attempts": (NullOrUndefined Nothing) }
+newRetryStrategy' :: ( { "attempts" :: Maybe (Int) } -> {"attempts" :: Maybe (Int) } ) -> RetryStrategy
+newRetryStrategy'  customize = (RetryStrategy <<< customize) { "attempts": Nothing }
 
 
 
 -- | <p>These errors are usually caused by a server issue.</p>
 newtype ServerException = ServerException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeServerException :: Newtype ServerException _
 derive instance repGenericServerException :: Generic ServerException _
@@ -1273,12 +1272,12 @@ instance encodeServerException :: Encode ServerException where encode = genericE
 
 -- | Constructs ServerException from required parameters
 newServerException :: ServerException
-newServerException  = ServerException { "message": (NullOrUndefined Nothing) }
+newServerException  = ServerException { "message": Nothing }
 
 -- | Constructs ServerException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServerException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ServerException
-newServerException'  customize = (ServerException <<< customize) { "message": (NullOrUndefined Nothing) }
+newServerException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ServerException
+newServerException'  customize = (ServerException <<< customize) { "message": Nothing }
 
 
 
@@ -1294,12 +1293,12 @@ instance encodeStringList :: Encode StringList where encode = genericEncode opti
 newtype SubmitJobRequest = SubmitJobRequest 
   { "jobName" :: (String)
   , "jobQueue" :: (String)
-  , "arrayProperties" :: NullOrUndefined (ArrayProperties)
-  , "dependsOn" :: NullOrUndefined (JobDependencyList)
+  , "arrayProperties" :: Maybe (ArrayProperties)
+  , "dependsOn" :: Maybe (JobDependencyList)
   , "jobDefinition" :: (String)
-  , "parameters" :: NullOrUndefined (ParametersMap)
-  , "containerOverrides" :: NullOrUndefined (ContainerOverrides)
-  , "retryStrategy" :: NullOrUndefined (RetryStrategy)
+  , "parameters" :: Maybe (ParametersMap)
+  , "containerOverrides" :: Maybe (ContainerOverrides)
+  , "retryStrategy" :: Maybe (RetryStrategy)
   }
 derive instance newtypeSubmitJobRequest :: Newtype SubmitJobRequest _
 derive instance repGenericSubmitJobRequest :: Generic SubmitJobRequest _
@@ -1309,12 +1308,12 @@ instance encodeSubmitJobRequest :: Encode SubmitJobRequest where encode = generi
 
 -- | Constructs SubmitJobRequest from required parameters
 newSubmitJobRequest :: String -> String -> String -> SubmitJobRequest
-newSubmitJobRequest _jobDefinition _jobName _jobQueue = SubmitJobRequest { "jobDefinition": _jobDefinition, "jobName": _jobName, "jobQueue": _jobQueue, "arrayProperties": (NullOrUndefined Nothing), "containerOverrides": (NullOrUndefined Nothing), "dependsOn": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing) }
+newSubmitJobRequest _jobDefinition _jobName _jobQueue = SubmitJobRequest { "jobDefinition": _jobDefinition, "jobName": _jobName, "jobQueue": _jobQueue, "arrayProperties": Nothing, "containerOverrides": Nothing, "dependsOn": Nothing, "parameters": Nothing, "retryStrategy": Nothing }
 
 -- | Constructs SubmitJobRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubmitJobRequest' :: String -> String -> String -> ( { "jobName" :: (String) , "jobQueue" :: (String) , "arrayProperties" :: NullOrUndefined (ArrayProperties) , "dependsOn" :: NullOrUndefined (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: NullOrUndefined (ParametersMap) , "containerOverrides" :: NullOrUndefined (ContainerOverrides) , "retryStrategy" :: NullOrUndefined (RetryStrategy) } -> {"jobName" :: (String) , "jobQueue" :: (String) , "arrayProperties" :: NullOrUndefined (ArrayProperties) , "dependsOn" :: NullOrUndefined (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: NullOrUndefined (ParametersMap) , "containerOverrides" :: NullOrUndefined (ContainerOverrides) , "retryStrategy" :: NullOrUndefined (RetryStrategy) } ) -> SubmitJobRequest
-newSubmitJobRequest' _jobDefinition _jobName _jobQueue customize = (SubmitJobRequest <<< customize) { "jobDefinition": _jobDefinition, "jobName": _jobName, "jobQueue": _jobQueue, "arrayProperties": (NullOrUndefined Nothing), "containerOverrides": (NullOrUndefined Nothing), "dependsOn": (NullOrUndefined Nothing), "parameters": (NullOrUndefined Nothing), "retryStrategy": (NullOrUndefined Nothing) }
+newSubmitJobRequest' :: String -> String -> String -> ( { "jobName" :: (String) , "jobQueue" :: (String) , "arrayProperties" :: Maybe (ArrayProperties) , "dependsOn" :: Maybe (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: Maybe (ParametersMap) , "containerOverrides" :: Maybe (ContainerOverrides) , "retryStrategy" :: Maybe (RetryStrategy) } -> {"jobName" :: (String) , "jobQueue" :: (String) , "arrayProperties" :: Maybe (ArrayProperties) , "dependsOn" :: Maybe (JobDependencyList) , "jobDefinition" :: (String) , "parameters" :: Maybe (ParametersMap) , "containerOverrides" :: Maybe (ContainerOverrides) , "retryStrategy" :: Maybe (RetryStrategy) } ) -> SubmitJobRequest
+newSubmitJobRequest' _jobDefinition _jobName _jobQueue customize = (SubmitJobRequest <<< customize) { "jobDefinition": _jobDefinition, "jobName": _jobName, "jobQueue": _jobQueue, "arrayProperties": Nothing, "containerOverrides": Nothing, "dependsOn": Nothing, "parameters": Nothing, "retryStrategy": Nothing }
 
 
 
@@ -1412,9 +1411,9 @@ instance encodeUlimits :: Encode Ulimits where encode = genericEncode options
 
 newtype UpdateComputeEnvironmentRequest = UpdateComputeEnvironmentRequest 
   { "computeEnvironment" :: (String)
-  , "state" :: NullOrUndefined (CEState)
-  , "computeResources" :: NullOrUndefined (ComputeResourceUpdate)
-  , "serviceRole" :: NullOrUndefined (String)
+  , "state" :: Maybe (CEState)
+  , "computeResources" :: Maybe (ComputeResourceUpdate)
+  , "serviceRole" :: Maybe (String)
   }
 derive instance newtypeUpdateComputeEnvironmentRequest :: Newtype UpdateComputeEnvironmentRequest _
 derive instance repGenericUpdateComputeEnvironmentRequest :: Generic UpdateComputeEnvironmentRequest _
@@ -1424,18 +1423,18 @@ instance encodeUpdateComputeEnvironmentRequest :: Encode UpdateComputeEnvironmen
 
 -- | Constructs UpdateComputeEnvironmentRequest from required parameters
 newUpdateComputeEnvironmentRequest :: String -> UpdateComputeEnvironmentRequest
-newUpdateComputeEnvironmentRequest _computeEnvironment = UpdateComputeEnvironmentRequest { "computeEnvironment": _computeEnvironment, "computeResources": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newUpdateComputeEnvironmentRequest _computeEnvironment = UpdateComputeEnvironmentRequest { "computeEnvironment": _computeEnvironment, "computeResources": Nothing, "serviceRole": Nothing, "state": Nothing }
 
 -- | Constructs UpdateComputeEnvironmentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateComputeEnvironmentRequest' :: String -> ( { "computeEnvironment" :: (String) , "state" :: NullOrUndefined (CEState) , "computeResources" :: NullOrUndefined (ComputeResourceUpdate) , "serviceRole" :: NullOrUndefined (String) } -> {"computeEnvironment" :: (String) , "state" :: NullOrUndefined (CEState) , "computeResources" :: NullOrUndefined (ComputeResourceUpdate) , "serviceRole" :: NullOrUndefined (String) } ) -> UpdateComputeEnvironmentRequest
-newUpdateComputeEnvironmentRequest' _computeEnvironment customize = (UpdateComputeEnvironmentRequest <<< customize) { "computeEnvironment": _computeEnvironment, "computeResources": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newUpdateComputeEnvironmentRequest' :: String -> ( { "computeEnvironment" :: (String) , "state" :: Maybe (CEState) , "computeResources" :: Maybe (ComputeResourceUpdate) , "serviceRole" :: Maybe (String) } -> {"computeEnvironment" :: (String) , "state" :: Maybe (CEState) , "computeResources" :: Maybe (ComputeResourceUpdate) , "serviceRole" :: Maybe (String) } ) -> UpdateComputeEnvironmentRequest
+newUpdateComputeEnvironmentRequest' _computeEnvironment customize = (UpdateComputeEnvironmentRequest <<< customize) { "computeEnvironment": _computeEnvironment, "computeResources": Nothing, "serviceRole": Nothing, "state": Nothing }
 
 
 
 newtype UpdateComputeEnvironmentResponse = UpdateComputeEnvironmentResponse 
-  { "computeEnvironmentName" :: NullOrUndefined (String)
-  , "computeEnvironmentArn" :: NullOrUndefined (String)
+  { "computeEnvironmentName" :: Maybe (String)
+  , "computeEnvironmentArn" :: Maybe (String)
   }
 derive instance newtypeUpdateComputeEnvironmentResponse :: Newtype UpdateComputeEnvironmentResponse _
 derive instance repGenericUpdateComputeEnvironmentResponse :: Generic UpdateComputeEnvironmentResponse _
@@ -1445,20 +1444,20 @@ instance encodeUpdateComputeEnvironmentResponse :: Encode UpdateComputeEnvironme
 
 -- | Constructs UpdateComputeEnvironmentResponse from required parameters
 newUpdateComputeEnvironmentResponse :: UpdateComputeEnvironmentResponse
-newUpdateComputeEnvironmentResponse  = UpdateComputeEnvironmentResponse { "computeEnvironmentArn": (NullOrUndefined Nothing), "computeEnvironmentName": (NullOrUndefined Nothing) }
+newUpdateComputeEnvironmentResponse  = UpdateComputeEnvironmentResponse { "computeEnvironmentArn": Nothing, "computeEnvironmentName": Nothing }
 
 -- | Constructs UpdateComputeEnvironmentResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateComputeEnvironmentResponse' :: ( { "computeEnvironmentName" :: NullOrUndefined (String) , "computeEnvironmentArn" :: NullOrUndefined (String) } -> {"computeEnvironmentName" :: NullOrUndefined (String) , "computeEnvironmentArn" :: NullOrUndefined (String) } ) -> UpdateComputeEnvironmentResponse
-newUpdateComputeEnvironmentResponse'  customize = (UpdateComputeEnvironmentResponse <<< customize) { "computeEnvironmentArn": (NullOrUndefined Nothing), "computeEnvironmentName": (NullOrUndefined Nothing) }
+newUpdateComputeEnvironmentResponse' :: ( { "computeEnvironmentName" :: Maybe (String) , "computeEnvironmentArn" :: Maybe (String) } -> {"computeEnvironmentName" :: Maybe (String) , "computeEnvironmentArn" :: Maybe (String) } ) -> UpdateComputeEnvironmentResponse
+newUpdateComputeEnvironmentResponse'  customize = (UpdateComputeEnvironmentResponse <<< customize) { "computeEnvironmentArn": Nothing, "computeEnvironmentName": Nothing }
 
 
 
 newtype UpdateJobQueueRequest = UpdateJobQueueRequest 
   { "jobQueue" :: (String)
-  , "state" :: NullOrUndefined (JQState)
-  , "priority" :: NullOrUndefined (Int)
-  , "computeEnvironmentOrder" :: NullOrUndefined (ComputeEnvironmentOrders)
+  , "state" :: Maybe (JQState)
+  , "priority" :: Maybe (Int)
+  , "computeEnvironmentOrder" :: Maybe (ComputeEnvironmentOrders)
   }
 derive instance newtypeUpdateJobQueueRequest :: Newtype UpdateJobQueueRequest _
 derive instance repGenericUpdateJobQueueRequest :: Generic UpdateJobQueueRequest _
@@ -1468,18 +1467,18 @@ instance encodeUpdateJobQueueRequest :: Encode UpdateJobQueueRequest where encod
 
 -- | Constructs UpdateJobQueueRequest from required parameters
 newUpdateJobQueueRequest :: String -> UpdateJobQueueRequest
-newUpdateJobQueueRequest _jobQueue = UpdateJobQueueRequest { "jobQueue": _jobQueue, "computeEnvironmentOrder": (NullOrUndefined Nothing), "priority": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newUpdateJobQueueRequest _jobQueue = UpdateJobQueueRequest { "jobQueue": _jobQueue, "computeEnvironmentOrder": Nothing, "priority": Nothing, "state": Nothing }
 
 -- | Constructs UpdateJobQueueRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateJobQueueRequest' :: String -> ( { "jobQueue" :: (String) , "state" :: NullOrUndefined (JQState) , "priority" :: NullOrUndefined (Int) , "computeEnvironmentOrder" :: NullOrUndefined (ComputeEnvironmentOrders) } -> {"jobQueue" :: (String) , "state" :: NullOrUndefined (JQState) , "priority" :: NullOrUndefined (Int) , "computeEnvironmentOrder" :: NullOrUndefined (ComputeEnvironmentOrders) } ) -> UpdateJobQueueRequest
-newUpdateJobQueueRequest' _jobQueue customize = (UpdateJobQueueRequest <<< customize) { "jobQueue": _jobQueue, "computeEnvironmentOrder": (NullOrUndefined Nothing), "priority": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newUpdateJobQueueRequest' :: String -> ( { "jobQueue" :: (String) , "state" :: Maybe (JQState) , "priority" :: Maybe (Int) , "computeEnvironmentOrder" :: Maybe (ComputeEnvironmentOrders) } -> {"jobQueue" :: (String) , "state" :: Maybe (JQState) , "priority" :: Maybe (Int) , "computeEnvironmentOrder" :: Maybe (ComputeEnvironmentOrders) } ) -> UpdateJobQueueRequest
+newUpdateJobQueueRequest' _jobQueue customize = (UpdateJobQueueRequest <<< customize) { "jobQueue": _jobQueue, "computeEnvironmentOrder": Nothing, "priority": Nothing, "state": Nothing }
 
 
 
 newtype UpdateJobQueueResponse = UpdateJobQueueResponse 
-  { "jobQueueName" :: NullOrUndefined (String)
-  , "jobQueueArn" :: NullOrUndefined (String)
+  { "jobQueueName" :: Maybe (String)
+  , "jobQueueArn" :: Maybe (String)
   }
 derive instance newtypeUpdateJobQueueResponse :: Newtype UpdateJobQueueResponse _
 derive instance repGenericUpdateJobQueueResponse :: Generic UpdateJobQueueResponse _
@@ -1489,19 +1488,19 @@ instance encodeUpdateJobQueueResponse :: Encode UpdateJobQueueResponse where enc
 
 -- | Constructs UpdateJobQueueResponse from required parameters
 newUpdateJobQueueResponse :: UpdateJobQueueResponse
-newUpdateJobQueueResponse  = UpdateJobQueueResponse { "jobQueueArn": (NullOrUndefined Nothing), "jobQueueName": (NullOrUndefined Nothing) }
+newUpdateJobQueueResponse  = UpdateJobQueueResponse { "jobQueueArn": Nothing, "jobQueueName": Nothing }
 
 -- | Constructs UpdateJobQueueResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateJobQueueResponse' :: ( { "jobQueueName" :: NullOrUndefined (String) , "jobQueueArn" :: NullOrUndefined (String) } -> {"jobQueueName" :: NullOrUndefined (String) , "jobQueueArn" :: NullOrUndefined (String) } ) -> UpdateJobQueueResponse
-newUpdateJobQueueResponse'  customize = (UpdateJobQueueResponse <<< customize) { "jobQueueArn": (NullOrUndefined Nothing), "jobQueueName": (NullOrUndefined Nothing) }
+newUpdateJobQueueResponse' :: ( { "jobQueueName" :: Maybe (String) , "jobQueueArn" :: Maybe (String) } -> {"jobQueueName" :: Maybe (String) , "jobQueueArn" :: Maybe (String) } ) -> UpdateJobQueueResponse
+newUpdateJobQueueResponse'  customize = (UpdateJobQueueResponse <<< customize) { "jobQueueArn": Nothing, "jobQueueName": Nothing }
 
 
 
 -- | <p>A data volume used in a job's container properties.</p>
 newtype Volume = Volume 
-  { "host" :: NullOrUndefined (Host)
-  , "name" :: NullOrUndefined (String)
+  { "host" :: Maybe (Host)
+  , "name" :: Maybe (String)
   }
 derive instance newtypeVolume :: Newtype Volume _
 derive instance repGenericVolume :: Generic Volume _
@@ -1511,12 +1510,12 @@ instance encodeVolume :: Encode Volume where encode = genericEncode options
 
 -- | Constructs Volume from required parameters
 newVolume :: Volume
-newVolume  = Volume { "host": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newVolume  = Volume { "host": Nothing, "name": Nothing }
 
 -- | Constructs Volume's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVolume' :: ( { "host" :: NullOrUndefined (Host) , "name" :: NullOrUndefined (String) } -> {"host" :: NullOrUndefined (Host) , "name" :: NullOrUndefined (String) } ) -> Volume
-newVolume'  customize = (Volume <<< customize) { "host": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newVolume' :: ( { "host" :: Maybe (Host) , "name" :: Maybe (String) } -> {"host" :: Maybe (Host) , "name" :: Maybe (String) } ) -> Volume
+newVolume'  customize = (Volume <<< customize) { "host": Nothing, "name": Nothing }
 
 
 

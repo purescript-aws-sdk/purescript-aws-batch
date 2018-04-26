@@ -42,7 +42,7 @@ Encode ArrayJobStatusSummary
 
 ``` purescript
 newtype ArrayProperties
-  = ArrayProperties { size :: NullOrUndefined (Int) }
+  = ArrayProperties { size :: Maybe (Int) }
 ```
 
 <p>An object representing an AWS Batch array job.</p>
@@ -67,7 +67,7 @@ Constructs ArrayProperties from required parameters
 #### `newArrayProperties'`
 
 ``` purescript
-newArrayProperties' :: ({ size :: NullOrUndefined (Int) } -> { size :: NullOrUndefined (Int) }) -> ArrayProperties
+newArrayProperties' :: ({ size :: Maybe (Int) } -> { size :: Maybe (Int) }) -> ArrayProperties
 ```
 
 Constructs ArrayProperties's fields from required parameters
@@ -76,7 +76,7 @@ Constructs ArrayProperties's fields from required parameters
 
 ``` purescript
 newtype ArrayPropertiesDetail
-  = ArrayPropertiesDetail { statusSummary :: NullOrUndefined (ArrayJobStatusSummary), size :: NullOrUndefined (Int), index :: NullOrUndefined (Int) }
+  = ArrayPropertiesDetail { statusSummary :: Maybe (ArrayJobStatusSummary), size :: Maybe (Int), index :: Maybe (Int) }
 ```
 
 <p>An object representing the array properties of a job.</p>
@@ -101,7 +101,7 @@ Constructs ArrayPropertiesDetail from required parameters
 #### `newArrayPropertiesDetail'`
 
 ``` purescript
-newArrayPropertiesDetail' :: ({ statusSummary :: NullOrUndefined (ArrayJobStatusSummary), size :: NullOrUndefined (Int), index :: NullOrUndefined (Int) } -> { statusSummary :: NullOrUndefined (ArrayJobStatusSummary), size :: NullOrUndefined (Int), index :: NullOrUndefined (Int) }) -> ArrayPropertiesDetail
+newArrayPropertiesDetail' :: ({ statusSummary :: Maybe (ArrayJobStatusSummary), size :: Maybe (Int), index :: Maybe (Int) } -> { statusSummary :: Maybe (ArrayJobStatusSummary), size :: Maybe (Int), index :: Maybe (Int) }) -> ArrayPropertiesDetail
 ```
 
 Constructs ArrayPropertiesDetail's fields from required parameters
@@ -110,7 +110,7 @@ Constructs ArrayPropertiesDetail's fields from required parameters
 
 ``` purescript
 newtype ArrayPropertiesSummary
-  = ArrayPropertiesSummary { size :: NullOrUndefined (Int), index :: NullOrUndefined (Int) }
+  = ArrayPropertiesSummary { size :: Maybe (Int), index :: Maybe (Int) }
 ```
 
 <p>An object representing the array properties of a job.</p>
@@ -135,7 +135,7 @@ Constructs ArrayPropertiesSummary from required parameters
 #### `newArrayPropertiesSummary'`
 
 ``` purescript
-newArrayPropertiesSummary' :: ({ size :: NullOrUndefined (Int), index :: NullOrUndefined (Int) } -> { size :: NullOrUndefined (Int), index :: NullOrUndefined (Int) }) -> ArrayPropertiesSummary
+newArrayPropertiesSummary' :: ({ size :: Maybe (Int), index :: Maybe (Int) } -> { size :: Maybe (Int), index :: Maybe (Int) }) -> ArrayPropertiesSummary
 ```
 
 Constructs ArrayPropertiesSummary's fields from required parameters
@@ -144,7 +144,7 @@ Constructs ArrayPropertiesSummary's fields from required parameters
 
 ``` purescript
 newtype AttemptContainerDetail
-  = AttemptContainerDetail { containerInstanceArn :: NullOrUndefined (String), taskArn :: NullOrUndefined (String), exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String), logStreamName :: NullOrUndefined (String) }
+  = AttemptContainerDetail { containerInstanceArn :: Maybe (String), taskArn :: Maybe (String), exitCode :: Maybe (Int), reason :: Maybe (String), logStreamName :: Maybe (String) }
 ```
 
 <p>An object representing the details of a container that is part of a job attempt.</p>
@@ -169,7 +169,7 @@ Constructs AttemptContainerDetail from required parameters
 #### `newAttemptContainerDetail'`
 
 ``` purescript
-newAttemptContainerDetail' :: ({ containerInstanceArn :: NullOrUndefined (String), taskArn :: NullOrUndefined (String), exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String), logStreamName :: NullOrUndefined (String) } -> { containerInstanceArn :: NullOrUndefined (String), taskArn :: NullOrUndefined (String), exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String), logStreamName :: NullOrUndefined (String) }) -> AttemptContainerDetail
+newAttemptContainerDetail' :: ({ containerInstanceArn :: Maybe (String), taskArn :: Maybe (String), exitCode :: Maybe (Int), reason :: Maybe (String), logStreamName :: Maybe (String) } -> { containerInstanceArn :: Maybe (String), taskArn :: Maybe (String), exitCode :: Maybe (Int), reason :: Maybe (String), logStreamName :: Maybe (String) }) -> AttemptContainerDetail
 ```
 
 Constructs AttemptContainerDetail's fields from required parameters
@@ -178,7 +178,7 @@ Constructs AttemptContainerDetail's fields from required parameters
 
 ``` purescript
 newtype AttemptDetail
-  = AttemptDetail { container :: NullOrUndefined (AttemptContainerDetail), startedAt :: NullOrUndefined (Number), stoppedAt :: NullOrUndefined (Number), statusReason :: NullOrUndefined (String) }
+  = AttemptDetail { container :: Maybe (AttemptContainerDetail), startedAt :: Maybe (Number), stoppedAt :: Maybe (Number), statusReason :: Maybe (String) }
 ```
 
 <p>An object representing a job attempt.</p>
@@ -203,7 +203,7 @@ Constructs AttemptDetail from required parameters
 #### `newAttemptDetail'`
 
 ``` purescript
-newAttemptDetail' :: ({ container :: NullOrUndefined (AttemptContainerDetail), startedAt :: NullOrUndefined (Number), stoppedAt :: NullOrUndefined (Number), statusReason :: NullOrUndefined (String) } -> { container :: NullOrUndefined (AttemptContainerDetail), startedAt :: NullOrUndefined (Number), stoppedAt :: NullOrUndefined (Number), statusReason :: NullOrUndefined (String) }) -> AttemptDetail
+newAttemptDetail' :: ({ container :: Maybe (AttemptContainerDetail), startedAt :: Maybe (Number), stoppedAt :: Maybe (Number), statusReason :: Maybe (String) } -> { container :: Maybe (AttemptContainerDetail), startedAt :: Maybe (Number), stoppedAt :: Maybe (Number), statusReason :: Maybe (String) }) -> AttemptDetail
 ```
 
 Constructs AttemptDetail's fields from required parameters
@@ -340,7 +340,7 @@ Encode CancelJobResponse
 
 ``` purescript
 newtype ClientException
-  = ClientException { message :: NullOrUndefined (String) }
+  = ClientException { message :: Maybe (String) }
 ```
 
 <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that is not valid. </p>
@@ -365,7 +365,7 @@ Constructs ClientException from required parameters
 #### `newClientException'`
 
 ``` purescript
-newClientException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ClientException
+newClientException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ClientException
 ```
 
 Constructs ClientException's fields from required parameters
@@ -374,7 +374,7 @@ Constructs ClientException's fields from required parameters
 
 ``` purescript
 newtype ComputeEnvironmentDetail
-  = ComputeEnvironmentDetail { computeEnvironmentName :: String, computeEnvironmentArn :: String, ecsClusterArn :: String, "type" :: NullOrUndefined (CEType), state :: NullOrUndefined (CEState), status :: NullOrUndefined (CEStatus), statusReason :: NullOrUndefined (String), computeResources :: NullOrUndefined (ComputeResource), serviceRole :: NullOrUndefined (String) }
+  = ComputeEnvironmentDetail { computeEnvironmentName :: String, computeEnvironmentArn :: String, ecsClusterArn :: String, "type" :: Maybe (CEType), state :: Maybe (CEState), status :: Maybe (CEStatus), statusReason :: Maybe (String), computeResources :: Maybe (ComputeResource), serviceRole :: Maybe (String) }
 ```
 
 <p>An object representing an AWS Batch compute environment.</p>
@@ -399,7 +399,7 @@ Constructs ComputeEnvironmentDetail from required parameters
 #### `newComputeEnvironmentDetail'`
 
 ``` purescript
-newComputeEnvironmentDetail' :: String -> String -> String -> ({ computeEnvironmentName :: String, computeEnvironmentArn :: String, ecsClusterArn :: String, "type" :: NullOrUndefined (CEType), state :: NullOrUndefined (CEState), status :: NullOrUndefined (CEStatus), statusReason :: NullOrUndefined (String), computeResources :: NullOrUndefined (ComputeResource), serviceRole :: NullOrUndefined (String) } -> { computeEnvironmentName :: String, computeEnvironmentArn :: String, ecsClusterArn :: String, "type" :: NullOrUndefined (CEType), state :: NullOrUndefined (CEState), status :: NullOrUndefined (CEStatus), statusReason :: NullOrUndefined (String), computeResources :: NullOrUndefined (ComputeResource), serviceRole :: NullOrUndefined (String) }) -> ComputeEnvironmentDetail
+newComputeEnvironmentDetail' :: String -> String -> String -> ({ computeEnvironmentName :: String, computeEnvironmentArn :: String, ecsClusterArn :: String, "type" :: Maybe (CEType), state :: Maybe (CEState), status :: Maybe (CEStatus), statusReason :: Maybe (String), computeResources :: Maybe (ComputeResource), serviceRole :: Maybe (String) } -> { computeEnvironmentName :: String, computeEnvironmentArn :: String, ecsClusterArn :: String, "type" :: Maybe (CEType), state :: Maybe (CEState), status :: Maybe (CEStatus), statusReason :: Maybe (String), computeResources :: Maybe (ComputeResource), serviceRole :: Maybe (String) }) -> ComputeEnvironmentDetail
 ```
 
 Constructs ComputeEnvironmentDetail's fields from required parameters
@@ -474,7 +474,7 @@ Encode ComputeEnvironmentOrders
 
 ``` purescript
 newtype ComputeResource
-  = ComputeResource { "type" :: CRType, minvCpus :: Int, maxvCpus :: Int, desiredvCpus :: NullOrUndefined (Int), instanceTypes :: StringList, imageId :: NullOrUndefined (String), subnets :: StringList, securityGroupIds :: StringList, ec2KeyPair :: NullOrUndefined (String), instanceRole :: String, tags :: NullOrUndefined (TagsMap), bidPercentage :: NullOrUndefined (Int), spotIamFleetRole :: NullOrUndefined (String) }
+  = ComputeResource { "type" :: CRType, minvCpus :: Int, maxvCpus :: Int, desiredvCpus :: Maybe (Int), instanceTypes :: StringList, imageId :: Maybe (String), subnets :: StringList, securityGroupIds :: StringList, ec2KeyPair :: Maybe (String), instanceRole :: String, tags :: Maybe (TagsMap), bidPercentage :: Maybe (Int), spotIamFleetRole :: Maybe (String) }
 ```
 
 <p>An object representing an AWS Batch compute resource.</p>
@@ -499,7 +499,7 @@ Constructs ComputeResource from required parameters
 #### `newComputeResource'`
 
 ``` purescript
-newComputeResource' :: String -> StringList -> Int -> Int -> StringList -> StringList -> CRType -> ({ "type" :: CRType, minvCpus :: Int, maxvCpus :: Int, desiredvCpus :: NullOrUndefined (Int), instanceTypes :: StringList, imageId :: NullOrUndefined (String), subnets :: StringList, securityGroupIds :: StringList, ec2KeyPair :: NullOrUndefined (String), instanceRole :: String, tags :: NullOrUndefined (TagsMap), bidPercentage :: NullOrUndefined (Int), spotIamFleetRole :: NullOrUndefined (String) } -> { "type" :: CRType, minvCpus :: Int, maxvCpus :: Int, desiredvCpus :: NullOrUndefined (Int), instanceTypes :: StringList, imageId :: NullOrUndefined (String), subnets :: StringList, securityGroupIds :: StringList, ec2KeyPair :: NullOrUndefined (String), instanceRole :: String, tags :: NullOrUndefined (TagsMap), bidPercentage :: NullOrUndefined (Int), spotIamFleetRole :: NullOrUndefined (String) }) -> ComputeResource
+newComputeResource' :: String -> StringList -> Int -> Int -> StringList -> StringList -> CRType -> ({ "type" :: CRType, minvCpus :: Int, maxvCpus :: Int, desiredvCpus :: Maybe (Int), instanceTypes :: StringList, imageId :: Maybe (String), subnets :: StringList, securityGroupIds :: StringList, ec2KeyPair :: Maybe (String), instanceRole :: String, tags :: Maybe (TagsMap), bidPercentage :: Maybe (Int), spotIamFleetRole :: Maybe (String) } -> { "type" :: CRType, minvCpus :: Int, maxvCpus :: Int, desiredvCpus :: Maybe (Int), instanceTypes :: StringList, imageId :: Maybe (String), subnets :: StringList, securityGroupIds :: StringList, ec2KeyPair :: Maybe (String), instanceRole :: String, tags :: Maybe (TagsMap), bidPercentage :: Maybe (Int), spotIamFleetRole :: Maybe (String) }) -> ComputeResource
 ```
 
 Constructs ComputeResource's fields from required parameters
@@ -508,7 +508,7 @@ Constructs ComputeResource's fields from required parameters
 
 ``` purescript
 newtype ComputeResourceUpdate
-  = ComputeResourceUpdate { minvCpus :: NullOrUndefined (Int), maxvCpus :: NullOrUndefined (Int), desiredvCpus :: NullOrUndefined (Int) }
+  = ComputeResourceUpdate { minvCpus :: Maybe (Int), maxvCpus :: Maybe (Int), desiredvCpus :: Maybe (Int) }
 ```
 
 <p>An object representing the attributes of a compute environment that can be updated.</p>
@@ -533,7 +533,7 @@ Constructs ComputeResourceUpdate from required parameters
 #### `newComputeResourceUpdate'`
 
 ``` purescript
-newComputeResourceUpdate' :: ({ minvCpus :: NullOrUndefined (Int), maxvCpus :: NullOrUndefined (Int), desiredvCpus :: NullOrUndefined (Int) } -> { minvCpus :: NullOrUndefined (Int), maxvCpus :: NullOrUndefined (Int), desiredvCpus :: NullOrUndefined (Int) }) -> ComputeResourceUpdate
+newComputeResourceUpdate' :: ({ minvCpus :: Maybe (Int), maxvCpus :: Maybe (Int), desiredvCpus :: Maybe (Int) } -> { minvCpus :: Maybe (Int), maxvCpus :: Maybe (Int), desiredvCpus :: Maybe (Int) }) -> ComputeResourceUpdate
 ```
 
 Constructs ComputeResourceUpdate's fields from required parameters
@@ -542,7 +542,7 @@ Constructs ComputeResourceUpdate's fields from required parameters
 
 ``` purescript
 newtype ContainerDetail
-  = ContainerDetail { image :: NullOrUndefined (String), vcpus :: NullOrUndefined (Int), memory :: NullOrUndefined (Int), command :: NullOrUndefined (StringList), jobRoleArn :: NullOrUndefined (String), volumes :: NullOrUndefined (Volumes), environment :: NullOrUndefined (EnvironmentVariables), mountPoints :: NullOrUndefined (MountPoints), readonlyRootFilesystem :: NullOrUndefined (Boolean), ulimits :: NullOrUndefined (Ulimits), privileged :: NullOrUndefined (Boolean), user :: NullOrUndefined (String), exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String), containerInstanceArn :: NullOrUndefined (String), taskArn :: NullOrUndefined (String), logStreamName :: NullOrUndefined (String) }
+  = ContainerDetail { image :: Maybe (String), vcpus :: Maybe (Int), memory :: Maybe (Int), command :: Maybe (StringList), jobRoleArn :: Maybe (String), volumes :: Maybe (Volumes), environment :: Maybe (EnvironmentVariables), mountPoints :: Maybe (MountPoints), readonlyRootFilesystem :: Maybe (Boolean), ulimits :: Maybe (Ulimits), privileged :: Maybe (Boolean), user :: Maybe (String), exitCode :: Maybe (Int), reason :: Maybe (String), containerInstanceArn :: Maybe (String), taskArn :: Maybe (String), logStreamName :: Maybe (String) }
 ```
 
 <p>An object representing the details of a container that is part of a job.</p>
@@ -567,7 +567,7 @@ Constructs ContainerDetail from required parameters
 #### `newContainerDetail'`
 
 ``` purescript
-newContainerDetail' :: ({ image :: NullOrUndefined (String), vcpus :: NullOrUndefined (Int), memory :: NullOrUndefined (Int), command :: NullOrUndefined (StringList), jobRoleArn :: NullOrUndefined (String), volumes :: NullOrUndefined (Volumes), environment :: NullOrUndefined (EnvironmentVariables), mountPoints :: NullOrUndefined (MountPoints), readonlyRootFilesystem :: NullOrUndefined (Boolean), ulimits :: NullOrUndefined (Ulimits), privileged :: NullOrUndefined (Boolean), user :: NullOrUndefined (String), exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String), containerInstanceArn :: NullOrUndefined (String), taskArn :: NullOrUndefined (String), logStreamName :: NullOrUndefined (String) } -> { image :: NullOrUndefined (String), vcpus :: NullOrUndefined (Int), memory :: NullOrUndefined (Int), command :: NullOrUndefined (StringList), jobRoleArn :: NullOrUndefined (String), volumes :: NullOrUndefined (Volumes), environment :: NullOrUndefined (EnvironmentVariables), mountPoints :: NullOrUndefined (MountPoints), readonlyRootFilesystem :: NullOrUndefined (Boolean), ulimits :: NullOrUndefined (Ulimits), privileged :: NullOrUndefined (Boolean), user :: NullOrUndefined (String), exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String), containerInstanceArn :: NullOrUndefined (String), taskArn :: NullOrUndefined (String), logStreamName :: NullOrUndefined (String) }) -> ContainerDetail
+newContainerDetail' :: ({ image :: Maybe (String), vcpus :: Maybe (Int), memory :: Maybe (Int), command :: Maybe (StringList), jobRoleArn :: Maybe (String), volumes :: Maybe (Volumes), environment :: Maybe (EnvironmentVariables), mountPoints :: Maybe (MountPoints), readonlyRootFilesystem :: Maybe (Boolean), ulimits :: Maybe (Ulimits), privileged :: Maybe (Boolean), user :: Maybe (String), exitCode :: Maybe (Int), reason :: Maybe (String), containerInstanceArn :: Maybe (String), taskArn :: Maybe (String), logStreamName :: Maybe (String) } -> { image :: Maybe (String), vcpus :: Maybe (Int), memory :: Maybe (Int), command :: Maybe (StringList), jobRoleArn :: Maybe (String), volumes :: Maybe (Volumes), environment :: Maybe (EnvironmentVariables), mountPoints :: Maybe (MountPoints), readonlyRootFilesystem :: Maybe (Boolean), ulimits :: Maybe (Ulimits), privileged :: Maybe (Boolean), user :: Maybe (String), exitCode :: Maybe (Int), reason :: Maybe (String), containerInstanceArn :: Maybe (String), taskArn :: Maybe (String), logStreamName :: Maybe (String) }) -> ContainerDetail
 ```
 
 Constructs ContainerDetail's fields from required parameters
@@ -576,7 +576,7 @@ Constructs ContainerDetail's fields from required parameters
 
 ``` purescript
 newtype ContainerOverrides
-  = ContainerOverrides { vcpus :: NullOrUndefined (Int), memory :: NullOrUndefined (Int), command :: NullOrUndefined (StringList), environment :: NullOrUndefined (EnvironmentVariables) }
+  = ContainerOverrides { vcpus :: Maybe (Int), memory :: Maybe (Int), command :: Maybe (StringList), environment :: Maybe (EnvironmentVariables) }
 ```
 
 <p>The overrides that should be sent to a container.</p>
@@ -601,7 +601,7 @@ Constructs ContainerOverrides from required parameters
 #### `newContainerOverrides'`
 
 ``` purescript
-newContainerOverrides' :: ({ vcpus :: NullOrUndefined (Int), memory :: NullOrUndefined (Int), command :: NullOrUndefined (StringList), environment :: NullOrUndefined (EnvironmentVariables) } -> { vcpus :: NullOrUndefined (Int), memory :: NullOrUndefined (Int), command :: NullOrUndefined (StringList), environment :: NullOrUndefined (EnvironmentVariables) }) -> ContainerOverrides
+newContainerOverrides' :: ({ vcpus :: Maybe (Int), memory :: Maybe (Int), command :: Maybe (StringList), environment :: Maybe (EnvironmentVariables) } -> { vcpus :: Maybe (Int), memory :: Maybe (Int), command :: Maybe (StringList), environment :: Maybe (EnvironmentVariables) }) -> ContainerOverrides
 ```
 
 Constructs ContainerOverrides's fields from required parameters
@@ -610,7 +610,7 @@ Constructs ContainerOverrides's fields from required parameters
 
 ``` purescript
 newtype ContainerProperties
-  = ContainerProperties { image :: String, vcpus :: Int, memory :: Int, command :: NullOrUndefined (StringList), jobRoleArn :: NullOrUndefined (String), volumes :: NullOrUndefined (Volumes), environment :: NullOrUndefined (EnvironmentVariables), mountPoints :: NullOrUndefined (MountPoints), readonlyRootFilesystem :: NullOrUndefined (Boolean), privileged :: NullOrUndefined (Boolean), ulimits :: NullOrUndefined (Ulimits), user :: NullOrUndefined (String) }
+  = ContainerProperties { image :: String, vcpus :: Int, memory :: Int, command :: Maybe (StringList), jobRoleArn :: Maybe (String), volumes :: Maybe (Volumes), environment :: Maybe (EnvironmentVariables), mountPoints :: Maybe (MountPoints), readonlyRootFilesystem :: Maybe (Boolean), privileged :: Maybe (Boolean), ulimits :: Maybe (Ulimits), user :: Maybe (String) }
 ```
 
 <p>Container properties are used in job definitions to describe the container that is launched as part of a job.</p>
@@ -635,7 +635,7 @@ Constructs ContainerProperties from required parameters
 #### `newContainerProperties'`
 
 ``` purescript
-newContainerProperties' :: String -> Int -> Int -> ({ image :: String, vcpus :: Int, memory :: Int, command :: NullOrUndefined (StringList), jobRoleArn :: NullOrUndefined (String), volumes :: NullOrUndefined (Volumes), environment :: NullOrUndefined (EnvironmentVariables), mountPoints :: NullOrUndefined (MountPoints), readonlyRootFilesystem :: NullOrUndefined (Boolean), privileged :: NullOrUndefined (Boolean), ulimits :: NullOrUndefined (Ulimits), user :: NullOrUndefined (String) } -> { image :: String, vcpus :: Int, memory :: Int, command :: NullOrUndefined (StringList), jobRoleArn :: NullOrUndefined (String), volumes :: NullOrUndefined (Volumes), environment :: NullOrUndefined (EnvironmentVariables), mountPoints :: NullOrUndefined (MountPoints), readonlyRootFilesystem :: NullOrUndefined (Boolean), privileged :: NullOrUndefined (Boolean), ulimits :: NullOrUndefined (Ulimits), user :: NullOrUndefined (String) }) -> ContainerProperties
+newContainerProperties' :: String -> Int -> Int -> ({ image :: String, vcpus :: Int, memory :: Int, command :: Maybe (StringList), jobRoleArn :: Maybe (String), volumes :: Maybe (Volumes), environment :: Maybe (EnvironmentVariables), mountPoints :: Maybe (MountPoints), readonlyRootFilesystem :: Maybe (Boolean), privileged :: Maybe (Boolean), ulimits :: Maybe (Ulimits), user :: Maybe (String) } -> { image :: String, vcpus :: Int, memory :: Int, command :: Maybe (StringList), jobRoleArn :: Maybe (String), volumes :: Maybe (Volumes), environment :: Maybe (EnvironmentVariables), mountPoints :: Maybe (MountPoints), readonlyRootFilesystem :: Maybe (Boolean), privileged :: Maybe (Boolean), ulimits :: Maybe (Ulimits), user :: Maybe (String) }) -> ContainerProperties
 ```
 
 Constructs ContainerProperties's fields from required parameters
@@ -644,7 +644,7 @@ Constructs ContainerProperties's fields from required parameters
 
 ``` purescript
 newtype ContainerSummary
-  = ContainerSummary { exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String) }
+  = ContainerSummary { exitCode :: Maybe (Int), reason :: Maybe (String) }
 ```
 
 <p>An object representing summary details of a container within a job.</p>
@@ -669,7 +669,7 @@ Constructs ContainerSummary from required parameters
 #### `newContainerSummary'`
 
 ``` purescript
-newContainerSummary' :: ({ exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String) } -> { exitCode :: NullOrUndefined (Int), reason :: NullOrUndefined (String) }) -> ContainerSummary
+newContainerSummary' :: ({ exitCode :: Maybe (Int), reason :: Maybe (String) } -> { exitCode :: Maybe (Int), reason :: Maybe (String) }) -> ContainerSummary
 ```
 
 Constructs ContainerSummary's fields from required parameters
@@ -678,7 +678,7 @@ Constructs ContainerSummary's fields from required parameters
 
 ``` purescript
 newtype CreateComputeEnvironmentRequest
-  = CreateComputeEnvironmentRequest { computeEnvironmentName :: String, "type" :: CEType, state :: NullOrUndefined (CEState), computeResources :: NullOrUndefined (ComputeResource), serviceRole :: String }
+  = CreateComputeEnvironmentRequest { computeEnvironmentName :: String, "type" :: CEType, state :: Maybe (CEState), computeResources :: Maybe (ComputeResource), serviceRole :: String }
 ```
 
 ##### Instances
@@ -701,7 +701,7 @@ Constructs CreateComputeEnvironmentRequest from required parameters
 #### `newCreateComputeEnvironmentRequest'`
 
 ``` purescript
-newCreateComputeEnvironmentRequest' :: String -> String -> CEType -> ({ computeEnvironmentName :: String, "type" :: CEType, state :: NullOrUndefined (CEState), computeResources :: NullOrUndefined (ComputeResource), serviceRole :: String } -> { computeEnvironmentName :: String, "type" :: CEType, state :: NullOrUndefined (CEState), computeResources :: NullOrUndefined (ComputeResource), serviceRole :: String }) -> CreateComputeEnvironmentRequest
+newCreateComputeEnvironmentRequest' :: String -> String -> CEType -> ({ computeEnvironmentName :: String, "type" :: CEType, state :: Maybe (CEState), computeResources :: Maybe (ComputeResource), serviceRole :: String } -> { computeEnvironmentName :: String, "type" :: CEType, state :: Maybe (CEState), computeResources :: Maybe (ComputeResource), serviceRole :: String }) -> CreateComputeEnvironmentRequest
 ```
 
 Constructs CreateComputeEnvironmentRequest's fields from required parameters
@@ -710,7 +710,7 @@ Constructs CreateComputeEnvironmentRequest's fields from required parameters
 
 ``` purescript
 newtype CreateComputeEnvironmentResponse
-  = CreateComputeEnvironmentResponse { computeEnvironmentName :: NullOrUndefined (String), computeEnvironmentArn :: NullOrUndefined (String) }
+  = CreateComputeEnvironmentResponse { computeEnvironmentName :: Maybe (String), computeEnvironmentArn :: Maybe (String) }
 ```
 
 ##### Instances
@@ -733,7 +733,7 @@ Constructs CreateComputeEnvironmentResponse from required parameters
 #### `newCreateComputeEnvironmentResponse'`
 
 ``` purescript
-newCreateComputeEnvironmentResponse' :: ({ computeEnvironmentName :: NullOrUndefined (String), computeEnvironmentArn :: NullOrUndefined (String) } -> { computeEnvironmentName :: NullOrUndefined (String), computeEnvironmentArn :: NullOrUndefined (String) }) -> CreateComputeEnvironmentResponse
+newCreateComputeEnvironmentResponse' :: ({ computeEnvironmentName :: Maybe (String), computeEnvironmentArn :: Maybe (String) } -> { computeEnvironmentName :: Maybe (String), computeEnvironmentArn :: Maybe (String) }) -> CreateComputeEnvironmentResponse
 ```
 
 Constructs CreateComputeEnvironmentResponse's fields from required parameters
@@ -742,7 +742,7 @@ Constructs CreateComputeEnvironmentResponse's fields from required parameters
 
 ``` purescript
 newtype CreateJobQueueRequest
-  = CreateJobQueueRequest { jobQueueName :: String, state :: NullOrUndefined (JQState), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }
+  = CreateJobQueueRequest { jobQueueName :: String, state :: Maybe (JQState), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }
 ```
 
 ##### Instances
@@ -765,7 +765,7 @@ Constructs CreateJobQueueRequest from required parameters
 #### `newCreateJobQueueRequest'`
 
 ``` purescript
-newCreateJobQueueRequest' :: ComputeEnvironmentOrders -> String -> Int -> ({ jobQueueName :: String, state :: NullOrUndefined (JQState), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders } -> { jobQueueName :: String, state :: NullOrUndefined (JQState), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }) -> CreateJobQueueRequest
+newCreateJobQueueRequest' :: ComputeEnvironmentOrders -> String -> Int -> ({ jobQueueName :: String, state :: Maybe (JQState), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders } -> { jobQueueName :: String, state :: Maybe (JQState), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }) -> CreateJobQueueRequest
 ```
 
 Constructs CreateJobQueueRequest's fields from required parameters
@@ -950,7 +950,7 @@ Encode DeregisterJobDefinitionResponse
 
 ``` purescript
 newtype DescribeComputeEnvironmentsRequest
-  = DescribeComputeEnvironmentsRequest { computeEnvironments :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) }
+  = DescribeComputeEnvironmentsRequest { computeEnvironments :: Maybe (StringList), maxResults :: Maybe (Int), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -973,7 +973,7 @@ Constructs DescribeComputeEnvironmentsRequest from required parameters
 #### `newDescribeComputeEnvironmentsRequest'`
 
 ``` purescript
-newDescribeComputeEnvironmentsRequest' :: ({ computeEnvironments :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) } -> { computeEnvironments :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) }) -> DescribeComputeEnvironmentsRequest
+newDescribeComputeEnvironmentsRequest' :: ({ computeEnvironments :: Maybe (StringList), maxResults :: Maybe (Int), nextToken :: Maybe (String) } -> { computeEnvironments :: Maybe (StringList), maxResults :: Maybe (Int), nextToken :: Maybe (String) }) -> DescribeComputeEnvironmentsRequest
 ```
 
 Constructs DescribeComputeEnvironmentsRequest's fields from required parameters
@@ -982,7 +982,7 @@ Constructs DescribeComputeEnvironmentsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeComputeEnvironmentsResponse
-  = DescribeComputeEnvironmentsResponse { computeEnvironments :: NullOrUndefined (ComputeEnvironmentDetailList), nextToken :: NullOrUndefined (String) }
+  = DescribeComputeEnvironmentsResponse { computeEnvironments :: Maybe (ComputeEnvironmentDetailList), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1005,7 +1005,7 @@ Constructs DescribeComputeEnvironmentsResponse from required parameters
 #### `newDescribeComputeEnvironmentsResponse'`
 
 ``` purescript
-newDescribeComputeEnvironmentsResponse' :: ({ computeEnvironments :: NullOrUndefined (ComputeEnvironmentDetailList), nextToken :: NullOrUndefined (String) } -> { computeEnvironments :: NullOrUndefined (ComputeEnvironmentDetailList), nextToken :: NullOrUndefined (String) }) -> DescribeComputeEnvironmentsResponse
+newDescribeComputeEnvironmentsResponse' :: ({ computeEnvironments :: Maybe (ComputeEnvironmentDetailList), nextToken :: Maybe (String) } -> { computeEnvironments :: Maybe (ComputeEnvironmentDetailList), nextToken :: Maybe (String) }) -> DescribeComputeEnvironmentsResponse
 ```
 
 Constructs DescribeComputeEnvironmentsResponse's fields from required parameters
@@ -1014,7 +1014,7 @@ Constructs DescribeComputeEnvironmentsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeJobDefinitionsRequest
-  = DescribeJobDefinitionsRequest { jobDefinitions :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), jobDefinitionName :: NullOrUndefined (String), status :: NullOrUndefined (String), nextToken :: NullOrUndefined (String) }
+  = DescribeJobDefinitionsRequest { jobDefinitions :: Maybe (StringList), maxResults :: Maybe (Int), jobDefinitionName :: Maybe (String), status :: Maybe (String), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1037,7 +1037,7 @@ Constructs DescribeJobDefinitionsRequest from required parameters
 #### `newDescribeJobDefinitionsRequest'`
 
 ``` purescript
-newDescribeJobDefinitionsRequest' :: ({ jobDefinitions :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), jobDefinitionName :: NullOrUndefined (String), status :: NullOrUndefined (String), nextToken :: NullOrUndefined (String) } -> { jobDefinitions :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), jobDefinitionName :: NullOrUndefined (String), status :: NullOrUndefined (String), nextToken :: NullOrUndefined (String) }) -> DescribeJobDefinitionsRequest
+newDescribeJobDefinitionsRequest' :: ({ jobDefinitions :: Maybe (StringList), maxResults :: Maybe (Int), jobDefinitionName :: Maybe (String), status :: Maybe (String), nextToken :: Maybe (String) } -> { jobDefinitions :: Maybe (StringList), maxResults :: Maybe (Int), jobDefinitionName :: Maybe (String), status :: Maybe (String), nextToken :: Maybe (String) }) -> DescribeJobDefinitionsRequest
 ```
 
 Constructs DescribeJobDefinitionsRequest's fields from required parameters
@@ -1046,7 +1046,7 @@ Constructs DescribeJobDefinitionsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeJobDefinitionsResponse
-  = DescribeJobDefinitionsResponse { jobDefinitions :: NullOrUndefined (JobDefinitionList), nextToken :: NullOrUndefined (String) }
+  = DescribeJobDefinitionsResponse { jobDefinitions :: Maybe (JobDefinitionList), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1069,7 +1069,7 @@ Constructs DescribeJobDefinitionsResponse from required parameters
 #### `newDescribeJobDefinitionsResponse'`
 
 ``` purescript
-newDescribeJobDefinitionsResponse' :: ({ jobDefinitions :: NullOrUndefined (JobDefinitionList), nextToken :: NullOrUndefined (String) } -> { jobDefinitions :: NullOrUndefined (JobDefinitionList), nextToken :: NullOrUndefined (String) }) -> DescribeJobDefinitionsResponse
+newDescribeJobDefinitionsResponse' :: ({ jobDefinitions :: Maybe (JobDefinitionList), nextToken :: Maybe (String) } -> { jobDefinitions :: Maybe (JobDefinitionList), nextToken :: Maybe (String) }) -> DescribeJobDefinitionsResponse
 ```
 
 Constructs DescribeJobDefinitionsResponse's fields from required parameters
@@ -1078,7 +1078,7 @@ Constructs DescribeJobDefinitionsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeJobQueuesRequest
-  = DescribeJobQueuesRequest { jobQueues :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) }
+  = DescribeJobQueuesRequest { jobQueues :: Maybe (StringList), maxResults :: Maybe (Int), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1101,7 +1101,7 @@ Constructs DescribeJobQueuesRequest from required parameters
 #### `newDescribeJobQueuesRequest'`
 
 ``` purescript
-newDescribeJobQueuesRequest' :: ({ jobQueues :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) } -> { jobQueues :: NullOrUndefined (StringList), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) }) -> DescribeJobQueuesRequest
+newDescribeJobQueuesRequest' :: ({ jobQueues :: Maybe (StringList), maxResults :: Maybe (Int), nextToken :: Maybe (String) } -> { jobQueues :: Maybe (StringList), maxResults :: Maybe (Int), nextToken :: Maybe (String) }) -> DescribeJobQueuesRequest
 ```
 
 Constructs DescribeJobQueuesRequest's fields from required parameters
@@ -1110,7 +1110,7 @@ Constructs DescribeJobQueuesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeJobQueuesResponse
-  = DescribeJobQueuesResponse { jobQueues :: NullOrUndefined (JobQueueDetailList), nextToken :: NullOrUndefined (String) }
+  = DescribeJobQueuesResponse { jobQueues :: Maybe (JobQueueDetailList), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1133,7 +1133,7 @@ Constructs DescribeJobQueuesResponse from required parameters
 #### `newDescribeJobQueuesResponse'`
 
 ``` purescript
-newDescribeJobQueuesResponse' :: ({ jobQueues :: NullOrUndefined (JobQueueDetailList), nextToken :: NullOrUndefined (String) } -> { jobQueues :: NullOrUndefined (JobQueueDetailList), nextToken :: NullOrUndefined (String) }) -> DescribeJobQueuesResponse
+newDescribeJobQueuesResponse' :: ({ jobQueues :: Maybe (JobQueueDetailList), nextToken :: Maybe (String) } -> { jobQueues :: Maybe (JobQueueDetailList), nextToken :: Maybe (String) }) -> DescribeJobQueuesResponse
 ```
 
 Constructs DescribeJobQueuesResponse's fields from required parameters
@@ -1174,7 +1174,7 @@ Constructs DescribeJobsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeJobsResponse
-  = DescribeJobsResponse { jobs :: NullOrUndefined (JobDetailList) }
+  = DescribeJobsResponse { jobs :: Maybe (JobDetailList) }
 ```
 
 ##### Instances
@@ -1197,7 +1197,7 @@ Constructs DescribeJobsResponse from required parameters
 #### `newDescribeJobsResponse'`
 
 ``` purescript
-newDescribeJobsResponse' :: ({ jobs :: NullOrUndefined (JobDetailList) } -> { jobs :: NullOrUndefined (JobDetailList) }) -> DescribeJobsResponse
+newDescribeJobsResponse' :: ({ jobs :: Maybe (JobDetailList) } -> { jobs :: Maybe (JobDetailList) }) -> DescribeJobsResponse
 ```
 
 Constructs DescribeJobsResponse's fields from required parameters
@@ -1222,7 +1222,7 @@ Encode EnvironmentVariables
 
 ``` purescript
 newtype Host
-  = Host { sourcePath :: NullOrUndefined (String) }
+  = Host { sourcePath :: Maybe (String) }
 ```
 
 <p>The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.</p>
@@ -1247,7 +1247,7 @@ Constructs Host from required parameters
 #### `newHost'`
 
 ``` purescript
-newHost' :: ({ sourcePath :: NullOrUndefined (String) } -> { sourcePath :: NullOrUndefined (String) }) -> Host
+newHost' :: ({ sourcePath :: Maybe (String) } -> { sourcePath :: Maybe (String) }) -> Host
 ```
 
 Constructs Host's fields from required parameters
@@ -1288,7 +1288,7 @@ Encode JQStatus
 
 ``` purescript
 newtype JobDefinition
-  = JobDefinition { jobDefinitionName :: String, jobDefinitionArn :: String, revision :: Int, status :: NullOrUndefined (String), "type" :: String, parameters :: NullOrUndefined (ParametersMap), retryStrategy :: NullOrUndefined (RetryStrategy), containerProperties :: NullOrUndefined (ContainerProperties) }
+  = JobDefinition { jobDefinitionName :: String, jobDefinitionArn :: String, revision :: Int, status :: Maybe (String), "type" :: String, parameters :: Maybe (ParametersMap), retryStrategy :: Maybe (RetryStrategy), containerProperties :: Maybe (ContainerProperties) }
 ```
 
 <p>An object representing an AWS Batch job definition.</p>
@@ -1313,7 +1313,7 @@ Constructs JobDefinition from required parameters
 #### `newJobDefinition'`
 
 ``` purescript
-newJobDefinition' :: String -> String -> Int -> String -> ({ jobDefinitionName :: String, jobDefinitionArn :: String, revision :: Int, status :: NullOrUndefined (String), "type" :: String, parameters :: NullOrUndefined (ParametersMap), retryStrategy :: NullOrUndefined (RetryStrategy), containerProperties :: NullOrUndefined (ContainerProperties) } -> { jobDefinitionName :: String, jobDefinitionArn :: String, revision :: Int, status :: NullOrUndefined (String), "type" :: String, parameters :: NullOrUndefined (ParametersMap), retryStrategy :: NullOrUndefined (RetryStrategy), containerProperties :: NullOrUndefined (ContainerProperties) }) -> JobDefinition
+newJobDefinition' :: String -> String -> Int -> String -> ({ jobDefinitionName :: String, jobDefinitionArn :: String, revision :: Int, status :: Maybe (String), "type" :: String, parameters :: Maybe (ParametersMap), retryStrategy :: Maybe (RetryStrategy), containerProperties :: Maybe (ContainerProperties) } -> { jobDefinitionName :: String, jobDefinitionArn :: String, revision :: Int, status :: Maybe (String), "type" :: String, parameters :: Maybe (ParametersMap), retryStrategy :: Maybe (RetryStrategy), containerProperties :: Maybe (ContainerProperties) }) -> JobDefinition
 ```
 
 Constructs JobDefinition's fields from required parameters
@@ -1354,7 +1354,7 @@ Encode JobDefinitionType
 
 ``` purescript
 newtype JobDependency
-  = JobDependency { jobId :: NullOrUndefined (String), "type" :: NullOrUndefined (ArrayJobDependency) }
+  = JobDependency { jobId :: Maybe (String), "type" :: Maybe (ArrayJobDependency) }
 ```
 
 <p>An object representing an AWS Batch job dependency.</p>
@@ -1379,7 +1379,7 @@ Constructs JobDependency from required parameters
 #### `newJobDependency'`
 
 ``` purescript
-newJobDependency' :: ({ jobId :: NullOrUndefined (String), "type" :: NullOrUndefined (ArrayJobDependency) } -> { jobId :: NullOrUndefined (String), "type" :: NullOrUndefined (ArrayJobDependency) }) -> JobDependency
+newJobDependency' :: ({ jobId :: Maybe (String), "type" :: Maybe (ArrayJobDependency) } -> { jobId :: Maybe (String), "type" :: Maybe (ArrayJobDependency) }) -> JobDependency
 ```
 
 Constructs JobDependency's fields from required parameters
@@ -1404,7 +1404,7 @@ Encode JobDependencyList
 
 ``` purescript
 newtype JobDetail
-  = JobDetail { jobName :: String, jobId :: String, jobQueue :: String, status :: JobStatus, attempts :: NullOrUndefined (AttemptDetails), statusReason :: NullOrUndefined (String), createdAt :: NullOrUndefined (Number), retryStrategy :: NullOrUndefined (RetryStrategy), startedAt :: Number, stoppedAt :: NullOrUndefined (Number), dependsOn :: NullOrUndefined (JobDependencyList), jobDefinition :: String, parameters :: NullOrUndefined (ParametersMap), container :: NullOrUndefined (ContainerDetail), arrayProperties :: NullOrUndefined (ArrayPropertiesDetail) }
+  = JobDetail { jobName :: String, jobId :: String, jobQueue :: String, status :: JobStatus, attempts :: Maybe (AttemptDetails), statusReason :: Maybe (String), createdAt :: Maybe (Number), retryStrategy :: Maybe (RetryStrategy), startedAt :: Number, stoppedAt :: Maybe (Number), dependsOn :: Maybe (JobDependencyList), jobDefinition :: String, parameters :: Maybe (ParametersMap), container :: Maybe (ContainerDetail), arrayProperties :: Maybe (ArrayPropertiesDetail) }
 ```
 
 <p>An object representing an AWS Batch job.</p>
@@ -1429,7 +1429,7 @@ Constructs JobDetail from required parameters
 #### `newJobDetail'`
 
 ``` purescript
-newJobDetail' :: String -> String -> String -> String -> Number -> JobStatus -> ({ jobName :: String, jobId :: String, jobQueue :: String, status :: JobStatus, attempts :: NullOrUndefined (AttemptDetails), statusReason :: NullOrUndefined (String), createdAt :: NullOrUndefined (Number), retryStrategy :: NullOrUndefined (RetryStrategy), startedAt :: Number, stoppedAt :: NullOrUndefined (Number), dependsOn :: NullOrUndefined (JobDependencyList), jobDefinition :: String, parameters :: NullOrUndefined (ParametersMap), container :: NullOrUndefined (ContainerDetail), arrayProperties :: NullOrUndefined (ArrayPropertiesDetail) } -> { jobName :: String, jobId :: String, jobQueue :: String, status :: JobStatus, attempts :: NullOrUndefined (AttemptDetails), statusReason :: NullOrUndefined (String), createdAt :: NullOrUndefined (Number), retryStrategy :: NullOrUndefined (RetryStrategy), startedAt :: Number, stoppedAt :: NullOrUndefined (Number), dependsOn :: NullOrUndefined (JobDependencyList), jobDefinition :: String, parameters :: NullOrUndefined (ParametersMap), container :: NullOrUndefined (ContainerDetail), arrayProperties :: NullOrUndefined (ArrayPropertiesDetail) }) -> JobDetail
+newJobDetail' :: String -> String -> String -> String -> Number -> JobStatus -> ({ jobName :: String, jobId :: String, jobQueue :: String, status :: JobStatus, attempts :: Maybe (AttemptDetails), statusReason :: Maybe (String), createdAt :: Maybe (Number), retryStrategy :: Maybe (RetryStrategy), startedAt :: Number, stoppedAt :: Maybe (Number), dependsOn :: Maybe (JobDependencyList), jobDefinition :: String, parameters :: Maybe (ParametersMap), container :: Maybe (ContainerDetail), arrayProperties :: Maybe (ArrayPropertiesDetail) } -> { jobName :: String, jobId :: String, jobQueue :: String, status :: JobStatus, attempts :: Maybe (AttemptDetails), statusReason :: Maybe (String), createdAt :: Maybe (Number), retryStrategy :: Maybe (RetryStrategy), startedAt :: Number, stoppedAt :: Maybe (Number), dependsOn :: Maybe (JobDependencyList), jobDefinition :: String, parameters :: Maybe (ParametersMap), container :: Maybe (ContainerDetail), arrayProperties :: Maybe (ArrayPropertiesDetail) }) -> JobDetail
 ```
 
 Constructs JobDetail's fields from required parameters
@@ -1454,7 +1454,7 @@ Encode JobDetailList
 
 ``` purescript
 newtype JobQueueDetail
-  = JobQueueDetail { jobQueueName :: String, jobQueueArn :: String, state :: JQState, status :: NullOrUndefined (JQStatus), statusReason :: NullOrUndefined (String), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }
+  = JobQueueDetail { jobQueueName :: String, jobQueueArn :: String, state :: JQState, status :: Maybe (JQStatus), statusReason :: Maybe (String), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }
 ```
 
 <p>An object representing the details of an AWS Batch job queue.</p>
@@ -1479,7 +1479,7 @@ Constructs JobQueueDetail from required parameters
 #### `newJobQueueDetail'`
 
 ``` purescript
-newJobQueueDetail' :: ComputeEnvironmentOrders -> String -> String -> Int -> JQState -> ({ jobQueueName :: String, jobQueueArn :: String, state :: JQState, status :: NullOrUndefined (JQStatus), statusReason :: NullOrUndefined (String), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders } -> { jobQueueName :: String, jobQueueArn :: String, state :: JQState, status :: NullOrUndefined (JQStatus), statusReason :: NullOrUndefined (String), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }) -> JobQueueDetail
+newJobQueueDetail' :: ComputeEnvironmentOrders -> String -> String -> Int -> JQState -> ({ jobQueueName :: String, jobQueueArn :: String, state :: JQState, status :: Maybe (JQStatus), statusReason :: Maybe (String), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders } -> { jobQueueName :: String, jobQueueArn :: String, state :: JQState, status :: Maybe (JQStatus), statusReason :: Maybe (String), priority :: Int, computeEnvironmentOrder :: ComputeEnvironmentOrders }) -> JobQueueDetail
 ```
 
 Constructs JobQueueDetail's fields from required parameters
@@ -1520,7 +1520,7 @@ Encode JobStatus
 
 ``` purescript
 newtype JobSummary
-  = JobSummary { jobId :: String, jobName :: String, createdAt :: NullOrUndefined (Number), status :: NullOrUndefined (JobStatus), statusReason :: NullOrUndefined (String), startedAt :: NullOrUndefined (Number), stoppedAt :: NullOrUndefined (Number), container :: NullOrUndefined (ContainerSummary), arrayProperties :: NullOrUndefined (ArrayPropertiesSummary) }
+  = JobSummary { jobId :: String, jobName :: String, createdAt :: Maybe (Number), status :: Maybe (JobStatus), statusReason :: Maybe (String), startedAt :: Maybe (Number), stoppedAt :: Maybe (Number), container :: Maybe (ContainerSummary), arrayProperties :: Maybe (ArrayPropertiesSummary) }
 ```
 
 <p>An object representing summary details of a job.</p>
@@ -1545,7 +1545,7 @@ Constructs JobSummary from required parameters
 #### `newJobSummary'`
 
 ``` purescript
-newJobSummary' :: String -> String -> ({ jobId :: String, jobName :: String, createdAt :: NullOrUndefined (Number), status :: NullOrUndefined (JobStatus), statusReason :: NullOrUndefined (String), startedAt :: NullOrUndefined (Number), stoppedAt :: NullOrUndefined (Number), container :: NullOrUndefined (ContainerSummary), arrayProperties :: NullOrUndefined (ArrayPropertiesSummary) } -> { jobId :: String, jobName :: String, createdAt :: NullOrUndefined (Number), status :: NullOrUndefined (JobStatus), statusReason :: NullOrUndefined (String), startedAt :: NullOrUndefined (Number), stoppedAt :: NullOrUndefined (Number), container :: NullOrUndefined (ContainerSummary), arrayProperties :: NullOrUndefined (ArrayPropertiesSummary) }) -> JobSummary
+newJobSummary' :: String -> String -> ({ jobId :: String, jobName :: String, createdAt :: Maybe (Number), status :: Maybe (JobStatus), statusReason :: Maybe (String), startedAt :: Maybe (Number), stoppedAt :: Maybe (Number), container :: Maybe (ContainerSummary), arrayProperties :: Maybe (ArrayPropertiesSummary) } -> { jobId :: String, jobName :: String, createdAt :: Maybe (Number), status :: Maybe (JobStatus), statusReason :: Maybe (String), startedAt :: Maybe (Number), stoppedAt :: Maybe (Number), container :: Maybe (ContainerSummary), arrayProperties :: Maybe (ArrayPropertiesSummary) }) -> JobSummary
 ```
 
 Constructs JobSummary's fields from required parameters
@@ -1570,7 +1570,7 @@ Encode JobSummaryList
 
 ``` purescript
 newtype KeyValuePair
-  = KeyValuePair { name :: NullOrUndefined (String), value :: NullOrUndefined (String) }
+  = KeyValuePair { name :: Maybe (String), value :: Maybe (String) }
 ```
 
 <p>A key-value pair object.</p>
@@ -1595,7 +1595,7 @@ Constructs KeyValuePair from required parameters
 #### `newKeyValuePair'`
 
 ``` purescript
-newKeyValuePair' :: ({ name :: NullOrUndefined (String), value :: NullOrUndefined (String) } -> { name :: NullOrUndefined (String), value :: NullOrUndefined (String) }) -> KeyValuePair
+newKeyValuePair' :: ({ name :: Maybe (String), value :: Maybe (String) } -> { name :: Maybe (String), value :: Maybe (String) }) -> KeyValuePair
 ```
 
 Constructs KeyValuePair's fields from required parameters
@@ -1604,7 +1604,7 @@ Constructs KeyValuePair's fields from required parameters
 
 ``` purescript
 newtype ListJobsRequest
-  = ListJobsRequest { jobQueue :: NullOrUndefined (String), arrayJobId :: NullOrUndefined (String), jobStatus :: NullOrUndefined (JobStatus), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) }
+  = ListJobsRequest { jobQueue :: Maybe (String), arrayJobId :: Maybe (String), jobStatus :: Maybe (JobStatus), maxResults :: Maybe (Int), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1627,7 +1627,7 @@ Constructs ListJobsRequest from required parameters
 #### `newListJobsRequest'`
 
 ``` purescript
-newListJobsRequest' :: ({ jobQueue :: NullOrUndefined (String), arrayJobId :: NullOrUndefined (String), jobStatus :: NullOrUndefined (JobStatus), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) } -> { jobQueue :: NullOrUndefined (String), arrayJobId :: NullOrUndefined (String), jobStatus :: NullOrUndefined (JobStatus), maxResults :: NullOrUndefined (Int), nextToken :: NullOrUndefined (String) }) -> ListJobsRequest
+newListJobsRequest' :: ({ jobQueue :: Maybe (String), arrayJobId :: Maybe (String), jobStatus :: Maybe (JobStatus), maxResults :: Maybe (Int), nextToken :: Maybe (String) } -> { jobQueue :: Maybe (String), arrayJobId :: Maybe (String), jobStatus :: Maybe (JobStatus), maxResults :: Maybe (Int), nextToken :: Maybe (String) }) -> ListJobsRequest
 ```
 
 Constructs ListJobsRequest's fields from required parameters
@@ -1636,7 +1636,7 @@ Constructs ListJobsRequest's fields from required parameters
 
 ``` purescript
 newtype ListJobsResponse
-  = ListJobsResponse { jobSummaryList :: JobSummaryList, nextToken :: NullOrUndefined (String) }
+  = ListJobsResponse { jobSummaryList :: JobSummaryList, nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1659,7 +1659,7 @@ Constructs ListJobsResponse from required parameters
 #### `newListJobsResponse'`
 
 ``` purescript
-newListJobsResponse' :: JobSummaryList -> ({ jobSummaryList :: JobSummaryList, nextToken :: NullOrUndefined (String) } -> { jobSummaryList :: JobSummaryList, nextToken :: NullOrUndefined (String) }) -> ListJobsResponse
+newListJobsResponse' :: JobSummaryList -> ({ jobSummaryList :: JobSummaryList, nextToken :: Maybe (String) } -> { jobSummaryList :: JobSummaryList, nextToken :: Maybe (String) }) -> ListJobsResponse
 ```
 
 Constructs ListJobsResponse's fields from required parameters
@@ -1668,7 +1668,7 @@ Constructs ListJobsResponse's fields from required parameters
 
 ``` purescript
 newtype MountPoint
-  = MountPoint { containerPath :: NullOrUndefined (String), readOnly :: NullOrUndefined (Boolean), sourceVolume :: NullOrUndefined (String) }
+  = MountPoint { containerPath :: Maybe (String), readOnly :: Maybe (Boolean), sourceVolume :: Maybe (String) }
 ```
 
 <p>Details on a Docker volume mount point that is used in a job's container properties.</p>
@@ -1693,7 +1693,7 @@ Constructs MountPoint from required parameters
 #### `newMountPoint'`
 
 ``` purescript
-newMountPoint' :: ({ containerPath :: NullOrUndefined (String), readOnly :: NullOrUndefined (Boolean), sourceVolume :: NullOrUndefined (String) } -> { containerPath :: NullOrUndefined (String), readOnly :: NullOrUndefined (Boolean), sourceVolume :: NullOrUndefined (String) }) -> MountPoint
+newMountPoint' :: ({ containerPath :: Maybe (String), readOnly :: Maybe (Boolean), sourceVolume :: Maybe (String) } -> { containerPath :: Maybe (String), readOnly :: Maybe (Boolean), sourceVolume :: Maybe (String) }) -> MountPoint
 ```
 
 Constructs MountPoint's fields from required parameters
@@ -1734,7 +1734,7 @@ Encode ParametersMap
 
 ``` purescript
 newtype RegisterJobDefinitionRequest
-  = RegisterJobDefinitionRequest { jobDefinitionName :: String, "type" :: JobDefinitionType, parameters :: NullOrUndefined (ParametersMap), containerProperties :: NullOrUndefined (ContainerProperties), retryStrategy :: NullOrUndefined (RetryStrategy) }
+  = RegisterJobDefinitionRequest { jobDefinitionName :: String, "type" :: JobDefinitionType, parameters :: Maybe (ParametersMap), containerProperties :: Maybe (ContainerProperties), retryStrategy :: Maybe (RetryStrategy) }
 ```
 
 ##### Instances
@@ -1757,7 +1757,7 @@ Constructs RegisterJobDefinitionRequest from required parameters
 #### `newRegisterJobDefinitionRequest'`
 
 ``` purescript
-newRegisterJobDefinitionRequest' :: String -> JobDefinitionType -> ({ jobDefinitionName :: String, "type" :: JobDefinitionType, parameters :: NullOrUndefined (ParametersMap), containerProperties :: NullOrUndefined (ContainerProperties), retryStrategy :: NullOrUndefined (RetryStrategy) } -> { jobDefinitionName :: String, "type" :: JobDefinitionType, parameters :: NullOrUndefined (ParametersMap), containerProperties :: NullOrUndefined (ContainerProperties), retryStrategy :: NullOrUndefined (RetryStrategy) }) -> RegisterJobDefinitionRequest
+newRegisterJobDefinitionRequest' :: String -> JobDefinitionType -> ({ jobDefinitionName :: String, "type" :: JobDefinitionType, parameters :: Maybe (ParametersMap), containerProperties :: Maybe (ContainerProperties), retryStrategy :: Maybe (RetryStrategy) } -> { jobDefinitionName :: String, "type" :: JobDefinitionType, parameters :: Maybe (ParametersMap), containerProperties :: Maybe (ContainerProperties), retryStrategy :: Maybe (RetryStrategy) }) -> RegisterJobDefinitionRequest
 ```
 
 Constructs RegisterJobDefinitionRequest's fields from required parameters
@@ -1798,7 +1798,7 @@ Constructs RegisterJobDefinitionResponse's fields from required parameters
 
 ``` purescript
 newtype RetryStrategy
-  = RetryStrategy { attempts :: NullOrUndefined (Int) }
+  = RetryStrategy { attempts :: Maybe (Int) }
 ```
 
 <p>The retry strategy associated with a job.</p>
@@ -1823,7 +1823,7 @@ Constructs RetryStrategy from required parameters
 #### `newRetryStrategy'`
 
 ``` purescript
-newRetryStrategy' :: ({ attempts :: NullOrUndefined (Int) } -> { attempts :: NullOrUndefined (Int) }) -> RetryStrategy
+newRetryStrategy' :: ({ attempts :: Maybe (Int) } -> { attempts :: Maybe (Int) }) -> RetryStrategy
 ```
 
 Constructs RetryStrategy's fields from required parameters
@@ -1832,7 +1832,7 @@ Constructs RetryStrategy's fields from required parameters
 
 ``` purescript
 newtype ServerException
-  = ServerException { message :: NullOrUndefined (String) }
+  = ServerException { message :: Maybe (String) }
 ```
 
 <p>These errors are usually caused by a server issue.</p>
@@ -1857,7 +1857,7 @@ Constructs ServerException from required parameters
 #### `newServerException'`
 
 ``` purescript
-newServerException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ServerException
+newServerException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ServerException
 ```
 
 Constructs ServerException's fields from required parameters
@@ -1882,7 +1882,7 @@ Encode StringList
 
 ``` purescript
 newtype SubmitJobRequest
-  = SubmitJobRequest { jobName :: String, jobQueue :: String, arrayProperties :: NullOrUndefined (ArrayProperties), dependsOn :: NullOrUndefined (JobDependencyList), jobDefinition :: String, parameters :: NullOrUndefined (ParametersMap), containerOverrides :: NullOrUndefined (ContainerOverrides), retryStrategy :: NullOrUndefined (RetryStrategy) }
+  = SubmitJobRequest { jobName :: String, jobQueue :: String, arrayProperties :: Maybe (ArrayProperties), dependsOn :: Maybe (JobDependencyList), jobDefinition :: String, parameters :: Maybe (ParametersMap), containerOverrides :: Maybe (ContainerOverrides), retryStrategy :: Maybe (RetryStrategy) }
 ```
 
 ##### Instances
@@ -1905,7 +1905,7 @@ Constructs SubmitJobRequest from required parameters
 #### `newSubmitJobRequest'`
 
 ``` purescript
-newSubmitJobRequest' :: String -> String -> String -> ({ jobName :: String, jobQueue :: String, arrayProperties :: NullOrUndefined (ArrayProperties), dependsOn :: NullOrUndefined (JobDependencyList), jobDefinition :: String, parameters :: NullOrUndefined (ParametersMap), containerOverrides :: NullOrUndefined (ContainerOverrides), retryStrategy :: NullOrUndefined (RetryStrategy) } -> { jobName :: String, jobQueue :: String, arrayProperties :: NullOrUndefined (ArrayProperties), dependsOn :: NullOrUndefined (JobDependencyList), jobDefinition :: String, parameters :: NullOrUndefined (ParametersMap), containerOverrides :: NullOrUndefined (ContainerOverrides), retryStrategy :: NullOrUndefined (RetryStrategy) }) -> SubmitJobRequest
+newSubmitJobRequest' :: String -> String -> String -> ({ jobName :: String, jobQueue :: String, arrayProperties :: Maybe (ArrayProperties), dependsOn :: Maybe (JobDependencyList), jobDefinition :: String, parameters :: Maybe (ParametersMap), containerOverrides :: Maybe (ContainerOverrides), retryStrategy :: Maybe (RetryStrategy) } -> { jobName :: String, jobQueue :: String, arrayProperties :: Maybe (ArrayProperties), dependsOn :: Maybe (JobDependencyList), jobDefinition :: String, parameters :: Maybe (ParametersMap), containerOverrides :: Maybe (ContainerOverrides), retryStrategy :: Maybe (RetryStrategy) }) -> SubmitJobRequest
 ```
 
 Constructs SubmitJobRequest's fields from required parameters
@@ -2060,7 +2060,7 @@ Encode Ulimits
 
 ``` purescript
 newtype UpdateComputeEnvironmentRequest
-  = UpdateComputeEnvironmentRequest { computeEnvironment :: String, state :: NullOrUndefined (CEState), computeResources :: NullOrUndefined (ComputeResourceUpdate), serviceRole :: NullOrUndefined (String) }
+  = UpdateComputeEnvironmentRequest { computeEnvironment :: String, state :: Maybe (CEState), computeResources :: Maybe (ComputeResourceUpdate), serviceRole :: Maybe (String) }
 ```
 
 ##### Instances
@@ -2083,7 +2083,7 @@ Constructs UpdateComputeEnvironmentRequest from required parameters
 #### `newUpdateComputeEnvironmentRequest'`
 
 ``` purescript
-newUpdateComputeEnvironmentRequest' :: String -> ({ computeEnvironment :: String, state :: NullOrUndefined (CEState), computeResources :: NullOrUndefined (ComputeResourceUpdate), serviceRole :: NullOrUndefined (String) } -> { computeEnvironment :: String, state :: NullOrUndefined (CEState), computeResources :: NullOrUndefined (ComputeResourceUpdate), serviceRole :: NullOrUndefined (String) }) -> UpdateComputeEnvironmentRequest
+newUpdateComputeEnvironmentRequest' :: String -> ({ computeEnvironment :: String, state :: Maybe (CEState), computeResources :: Maybe (ComputeResourceUpdate), serviceRole :: Maybe (String) } -> { computeEnvironment :: String, state :: Maybe (CEState), computeResources :: Maybe (ComputeResourceUpdate), serviceRole :: Maybe (String) }) -> UpdateComputeEnvironmentRequest
 ```
 
 Constructs UpdateComputeEnvironmentRequest's fields from required parameters
@@ -2092,7 +2092,7 @@ Constructs UpdateComputeEnvironmentRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateComputeEnvironmentResponse
-  = UpdateComputeEnvironmentResponse { computeEnvironmentName :: NullOrUndefined (String), computeEnvironmentArn :: NullOrUndefined (String) }
+  = UpdateComputeEnvironmentResponse { computeEnvironmentName :: Maybe (String), computeEnvironmentArn :: Maybe (String) }
 ```
 
 ##### Instances
@@ -2115,7 +2115,7 @@ Constructs UpdateComputeEnvironmentResponse from required parameters
 #### `newUpdateComputeEnvironmentResponse'`
 
 ``` purescript
-newUpdateComputeEnvironmentResponse' :: ({ computeEnvironmentName :: NullOrUndefined (String), computeEnvironmentArn :: NullOrUndefined (String) } -> { computeEnvironmentName :: NullOrUndefined (String), computeEnvironmentArn :: NullOrUndefined (String) }) -> UpdateComputeEnvironmentResponse
+newUpdateComputeEnvironmentResponse' :: ({ computeEnvironmentName :: Maybe (String), computeEnvironmentArn :: Maybe (String) } -> { computeEnvironmentName :: Maybe (String), computeEnvironmentArn :: Maybe (String) }) -> UpdateComputeEnvironmentResponse
 ```
 
 Constructs UpdateComputeEnvironmentResponse's fields from required parameters
@@ -2124,7 +2124,7 @@ Constructs UpdateComputeEnvironmentResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateJobQueueRequest
-  = UpdateJobQueueRequest { jobQueue :: String, state :: NullOrUndefined (JQState), priority :: NullOrUndefined (Int), computeEnvironmentOrder :: NullOrUndefined (ComputeEnvironmentOrders) }
+  = UpdateJobQueueRequest { jobQueue :: String, state :: Maybe (JQState), priority :: Maybe (Int), computeEnvironmentOrder :: Maybe (ComputeEnvironmentOrders) }
 ```
 
 ##### Instances
@@ -2147,7 +2147,7 @@ Constructs UpdateJobQueueRequest from required parameters
 #### `newUpdateJobQueueRequest'`
 
 ``` purescript
-newUpdateJobQueueRequest' :: String -> ({ jobQueue :: String, state :: NullOrUndefined (JQState), priority :: NullOrUndefined (Int), computeEnvironmentOrder :: NullOrUndefined (ComputeEnvironmentOrders) } -> { jobQueue :: String, state :: NullOrUndefined (JQState), priority :: NullOrUndefined (Int), computeEnvironmentOrder :: NullOrUndefined (ComputeEnvironmentOrders) }) -> UpdateJobQueueRequest
+newUpdateJobQueueRequest' :: String -> ({ jobQueue :: String, state :: Maybe (JQState), priority :: Maybe (Int), computeEnvironmentOrder :: Maybe (ComputeEnvironmentOrders) } -> { jobQueue :: String, state :: Maybe (JQState), priority :: Maybe (Int), computeEnvironmentOrder :: Maybe (ComputeEnvironmentOrders) }) -> UpdateJobQueueRequest
 ```
 
 Constructs UpdateJobQueueRequest's fields from required parameters
@@ -2156,7 +2156,7 @@ Constructs UpdateJobQueueRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateJobQueueResponse
-  = UpdateJobQueueResponse { jobQueueName :: NullOrUndefined (String), jobQueueArn :: NullOrUndefined (String) }
+  = UpdateJobQueueResponse { jobQueueName :: Maybe (String), jobQueueArn :: Maybe (String) }
 ```
 
 ##### Instances
@@ -2179,7 +2179,7 @@ Constructs UpdateJobQueueResponse from required parameters
 #### `newUpdateJobQueueResponse'`
 
 ``` purescript
-newUpdateJobQueueResponse' :: ({ jobQueueName :: NullOrUndefined (String), jobQueueArn :: NullOrUndefined (String) } -> { jobQueueName :: NullOrUndefined (String), jobQueueArn :: NullOrUndefined (String) }) -> UpdateJobQueueResponse
+newUpdateJobQueueResponse' :: ({ jobQueueName :: Maybe (String), jobQueueArn :: Maybe (String) } -> { jobQueueName :: Maybe (String), jobQueueArn :: Maybe (String) }) -> UpdateJobQueueResponse
 ```
 
 Constructs UpdateJobQueueResponse's fields from required parameters
@@ -2188,7 +2188,7 @@ Constructs UpdateJobQueueResponse's fields from required parameters
 
 ``` purescript
 newtype Volume
-  = Volume { host :: NullOrUndefined (Host), name :: NullOrUndefined (String) }
+  = Volume { host :: Maybe (Host), name :: Maybe (String) }
 ```
 
 <p>A data volume used in a job's container properties.</p>
@@ -2213,7 +2213,7 @@ Constructs Volume from required parameters
 #### `newVolume'`
 
 ``` purescript
-newVolume' :: ({ host :: NullOrUndefined (Host), name :: NullOrUndefined (String) } -> { host :: NullOrUndefined (Host), name :: NullOrUndefined (String) }) -> Volume
+newVolume' :: ({ host :: Maybe (Host), name :: Maybe (String) } -> { host :: Maybe (Host), name :: Maybe (String) }) -> Volume
 ```
 
 Constructs Volume's fields from required parameters
